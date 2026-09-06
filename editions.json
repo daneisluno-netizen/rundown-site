@@ -9,6 +9,32 @@
    "url": "https://rundown.quontiant.co.uk/2026-09-06/",
    "audio": "https://rundown.quontiant.co.uk/audio/2026-09-06-rundown.mp3",
    "title": "The Rundown - Sat 6 Sep: SSPR dates, prompt injection slip, Blue Zones",
+   "clips": [
+    {
+     "source": "Jonathan Edwards",
+     "title": "Your SSPR Is About To Stop Working \u2014 Jonathan Edwards",
+     "video": "https://www.youtube.com/watch?v=zAQG_4wPaXE",
+     "start": "2:00",
+     "end": "3:00",
+     "link": "https://www.youtube.com/watch?v=zAQG_4wPaXE&t=120s"
+    },
+    {
+     "source": "T-Minus365",
+     "title": "What's New in Microsoft 365 | July Updates \u2014 T-Minus365",
+     "video": "https://www.youtube.com/watch?v=KiaczTKwfOI",
+     "start": "11:00",
+     "end": "11:45",
+     "link": "https://www.youtube.com/watch?v=KiaczTKwfOI&t=660s"
+    },
+    {
+     "source": "Modern Wisdom (Chris Williamson), guest Daniel Lieberman, Harvard evolutionary biologist, author of \"Fed Up\"",
+     "title": "The Biggest Nutrition Scam \"Experts\" Are Pushing \u2014 Chris Williamson w/ Daniel Lieberman",
+     "video": "https://www.youtube.com/watch?v=YGAjgLtJJFI",
+     "start": "2:00",
+     "end": "2:45",
+     "link": "https://www.youtube.com/watch?v=YGAjgLtJJFI&t=120s"
+    }
+   ],
    "briefs": [
     {
      "slug": "2026-09-06-jonathan-edwards-sspr-registered-methods",
@@ -35,6 +61,7 @@
    "url": "https://rundown.quontiant.co.uk/2026-09-03/",
    "audio": null,
    "title": "",
+   "clips": [],
    "briefs": [
     {
      "slug": "2026-09-03-modern-wisdom-sinclair-fasting-clip",
@@ -61,6 +88,32 @@
    "url": "https://rundown.quontiant.co.uk/2026-09-02/",
    "audio": "https://rundown.quontiant.co.uk/audio/2026-09-02-rundown.mp3",
    "title": "The Rundown - 02 Sep: Conditional Access, MSP evidence, Claude ladder",
+   "clips": [
+    {
+     "source": "Jonathan Edwards (bearded365guy)",
+     "title": "Stop Trusting Your Office IP Address for MFA \u2014 Jonathan Edwards",
+     "video": "https://www.youtube.com/watch?v=upJqR8npgE0",
+     "start": "2:00",
+     "end": "2:45",
+     "link": "https://www.youtube.com/watch?v=upJqR8npgE0&t=120s"
+    },
+    {
+     "source": "Jonathan Edwards (bearded365guy)",
+     "title": "Why You're Losing Deals to Cheaper MSPs \u2014 Jonathan Edwards",
+     "video": "https://www.youtube.com/watch?v=Q8lZamlHw3s",
+     "start": "2:00",
+     "end": "2:40",
+     "link": "https://www.youtube.com/watch?v=Q8lZamlHw3s&t=120s"
+    },
+    {
+     "source": "Dan Martell",
+     "title": "1000+ Hours of Learning Claude in 15 Minutes \u2014 Dan Martell",
+     "video": "https://www.youtube.com/watch?v=sL5hPovH1vU",
+     "start": "8:00",
+     "end": "8:35",
+     "link": "https://www.youtube.com/watch?v=sL5hPovH1vU&t=480s"
+    }
+   ],
    "briefs": [
     {
      "slug": "2026-09-02-dan-martell-claude-beginner-to-pro",
@@ -87,6 +140,7 @@
    "url": "https://rundown.quontiant.co.uk/2026-08-31/",
    "audio": "https://rundown.quontiant.co.uk/audio/2026-08-31-rundown.mp3",
    "title": "The Rundown - Monday: SharePoint sharing, one real payment, the father brain",
+   "clips": [],
    "briefs": [
     {
      "slug": "2026-08-31-dan-martell-one-person-ai-business",
@@ -113,6 +167,7 @@
    "url": "https://rundown.quontiant.co.uk/2026-08-30/",
    "audio": "https://rundown.quontiant.co.uk/audio/2026-08-30-rundown.mp3",
    "title": "The Rundown - Sun 30 Aug: memberOf deadline, who pays for your tokens",
+   "clips": [],
    "briefs": [
     {
      "slug": "2026-08-30-diary-of-a-ceo-alex-hormozi-ai-business",

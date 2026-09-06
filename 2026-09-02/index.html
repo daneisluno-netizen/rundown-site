@@ -160,6 +160,25 @@ footer{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line);
 .listen .row a{color:var(--muted)}
 .listen .row a:hover{color:var(--accent)}
 
+/* --- clips in the episode --- */
+.clips{margin:16px 0 0;padding-top:12px;border-top:1px solid var(--line)}
+.clips h3{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-weight:500}
+.clips ol{margin:0;padding-left:22px;font-family:var(--display);font-size:14.5px;
+  line-height:1.45}
+.clips li{margin:0 0 10px}
+.clips li::marker{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.clips .who{font-weight:600}
+.clips .what{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.clips .what:hover{color:var(--accent);border-color:var(--accent)}
+.clips .where{display:block;font-family:var(--mono);font-size:11px;
+  letter-spacing:.06em;color:var(--muted);margin-top:2px;
+  font-variant-numeric:tabular-nums}
+.clips .where a{color:var(--muted)}
+.clips .slate{margin:3px 0 0;font-size:14px;color:var(--muted);
+  font-family:var(--body)}
+.clips .credit{margin:8px 0 0;font-size:12.5px;color:var(--muted)}
+
 /* --- edition strip --- */
 .strip{display:flex;gap:6px;overflow-x:auto;padding:14px 0 4px;
   scrollbar-width:thin;-webkit-overflow-scrolling:touch}
@@ -205,13 +224,13 @@ footer{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line);
 </head>
 <body>
 <div class="wrap">
-<nav class="nav"><a class="brand" href="/">The Rundown <span>&#183; rundown.quontiant.co.uk</span></a><span class="spacer"></span><a class="link" href="/">Latest</a><a class="link" href="/#editions">Editions</a><a class="link" href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml" target="_blank" rel="noopener">Podcast feed</a></nav>
+<nav class="nav"><a class="brand" href="/">The Rundown <span>&#183; rundown.quontiant.co.uk</span></a><span class="spacer"></span><a class="link" href="/">Latest</a><a class="link" href="/#editions">Editions</a><a class="link" href="/sources/">Sources</a><a class="link" href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml" target="_blank" rel="noopener">Podcast feed</a></nav>
 <div class="strip" aria-label="Editions"><a href="/2026-09-06/" title="Sun 06 Sep 2026: 3 briefs, audio">09-06<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-09-03/" title="Thu 03 Sep 2026: 3 briefs">09-03<span class="n"> &#183; 3</span></a><a href="/2026-09-02/" aria-current="page" title="Wed 02 Sep 2026: 3 briefs, audio">09-02<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-08-31/" title="Mon 31 Aug 2026: 3 briefs, audio">08-31<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-08-30/" title="Sun 30 Aug 2026: 14 briefs, audio">08-30<span class="n"> &#183; 14</span><span class="dot" aria-label="audio"></span></a></div>
 <header class="mast">
   <p class="kicker">Long-form, read so you don&#8217;t have to</p>
   <h1>Conditional Access, MSP evidence, Claude ladder</h1>
   <p class="edition">Wed 02 Sep 2026 &#183; 3 briefs</p>
-  <div class="listen"><h2>Listen</h2><p class="ep">The Rundown - 02 Sep: Conditional Access, MSP evidence, Claude ladder</p><p class="notes">Two from Jonathan Edwards: trusting your office IP for MFA (don&#x27;t), and why cheaper MSPs are winning your deals. One from Dan Martell that actually checks out - Claude Cowork and Remote Control, confirmed against Anthropic&#x27;s own docs.</p><audio controls preload="metadata" src="/audio/2026-09-02-rundown.mp3"></audio><div class="row"><span>3:16</span><span>2.4 MB</span><a href="/audio/2026-09-02-rundown.mp3" download>Download MP3</a><a href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml" target="_blank" rel="noopener">Subscribe in a podcast app</a></div></div>
+  <div class="listen"><h2>Listen</h2><p class="ep">The Rundown - 02 Sep: Conditional Access, MSP evidence, Claude ladder</p><p class="notes">Two from Jonathan Edwards: trusting your office IP for MFA (don&#x27;t), and why cheaper MSPs are winning your deals. One from Dan Martell that actually checks out - Claude Cowork and Remote Control, confirmed against Anthropic&#x27;s own docs.</p><audio controls preload="metadata" src="/audio/2026-09-02-rundown.mp3"></audio><div class="row"><span>3:16</span><span>2.4 MB</span><a href="/audio/2026-09-02-rundown.mp3" download>Download MP3</a><a href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml" target="_blank" rel="noopener">Subscribe in a podcast app</a></div><div class="clips"><h3>In this episode</h3><ol><li><span class="who">Jonathan Edwards (bearded365guy)</span> <a class="what" href="https://www.youtube.com/watch?v=upJqR8npgE0&amp;t=120s" target="_blank" rel="noopener">Stop Trusting Your Office IP Address for MFA — Jonathan Edwards &#8599;</a><span class="where">clip at 2:00&#8211;2:45 &#183; <a href="/2026-09-02/#2026-09-02-jonathan-edwards-conditional-access-trusted-locations">brief</a></span><p class="slate">Jonathan Edwards on why trusting your office IP address for MFA is a bad idea. Here&#x27;s the failure mode he walks through.</p></li><li><span class="who">Jonathan Edwards (bearded365guy)</span> <a class="what" href="https://www.youtube.com/watch?v=Q8lZamlHw3s&amp;t=120s" target="_blank" rel="noopener">Why You&#x27;re Losing Deals to Cheaper MSPs — Jonathan Edwards &#8599;</a><span class="where">clip at 2:00&#8211;2:40 &#183; <a href="/2026-09-02/#2026-09-02-jonathan-edwards-msp-differentiation-evidence">brief</a></span><p class="slate">Same channel, different problem. Why MSPs lose deals to cheaper competitors, and it isn&#x27;t the price.</p></li><li><span class="who">Dan Martell</span> <a class="what" href="https://www.youtube.com/watch?v=sL5hPovH1vU&amp;t=480s" target="_blank" rel="noopener">1000+ Hours of Learning Claude in 15 Minutes — Dan Martell &#8599;</a><span class="where">clip at 8:00&#8211;8:35 &#183; <a href="/2026-09-02/#2026-09-02-dan-martell-claude-beginner-to-pro">brief</a></span><p class="slate">Dan Martell&#x27;s Claude videos usually don&#x27;t clear the bar. This one did, and here&#x27;s the bit that checked out against Anthropic&#x27;s own docs.</p></li></ol><p class="credit">Clips are short excerpts; each link opens the full video at the point the clip starts, on the creator&#8217;s own channel.</p></div></div>
 </header>
 <div class="controls">
   <button id="all" aria-pressed="true">All</button><button data-lane="self" aria-pressed="false">self</button><button data-lane="work" aria-pressed="false">work</button>

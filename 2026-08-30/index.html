@@ -160,6 +160,25 @@ footer{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line);
 .listen .row a{color:var(--muted)}
 .listen .row a:hover{color:var(--accent)}
 
+/* --- clips in the episode --- */
+.clips{margin:16px 0 0;padding-top:12px;border-top:1px solid var(--line)}
+.clips h3{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-weight:500}
+.clips ol{margin:0;padding-left:22px;font-family:var(--display);font-size:14.5px;
+  line-height:1.45}
+.clips li{margin:0 0 10px}
+.clips li::marker{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.clips .who{font-weight:600}
+.clips .what{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.clips .what:hover{color:var(--accent);border-color:var(--accent)}
+.clips .where{display:block;font-family:var(--mono);font-size:11px;
+  letter-spacing:.06em;color:var(--muted);margin-top:2px;
+  font-variant-numeric:tabular-nums}
+.clips .where a{color:var(--muted)}
+.clips .slate{margin:3px 0 0;font-size:14px;color:var(--muted);
+  font-family:var(--body)}
+.clips .credit{margin:8px 0 0;font-size:12.5px;color:var(--muted)}
+
 /* --- edition strip --- */
 .strip{display:flex;gap:6px;overflow-x:auto;padding:14px 0 4px;
   scrollbar-width:thin;-webkit-overflow-scrolling:touch}
@@ -205,7 +224,7 @@ footer{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line);
 </head>
 <body>
 <div class="wrap">
-<nav class="nav"><a class="brand" href="/">The Rundown <span>&#183; rundown.quontiant.co.uk</span></a><span class="spacer"></span><a class="link" href="/">Latest</a><a class="link" href="/#editions">Editions</a><a class="link" href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml" target="_blank" rel="noopener">Podcast feed</a></nav>
+<nav class="nav"><a class="brand" href="/">The Rundown <span>&#183; rundown.quontiant.co.uk</span></a><span class="spacer"></span><a class="link" href="/">Latest</a><a class="link" href="/#editions">Editions</a><a class="link" href="/sources/">Sources</a><a class="link" href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml" target="_blank" rel="noopener">Podcast feed</a></nav>
 <div class="strip" aria-label="Editions"><a href="/2026-09-06/" title="Sun 06 Sep 2026: 3 briefs, audio">09-06<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-09-03/" title="Thu 03 Sep 2026: 3 briefs">09-03<span class="n"> &#183; 3</span></a><a href="/2026-09-02/" title="Wed 02 Sep 2026: 3 briefs, audio">09-02<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-08-31/" title="Mon 31 Aug 2026: 3 briefs, audio">08-31<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-08-30/" aria-current="page" title="Sun 30 Aug 2026: 14 briefs, audio">08-30<span class="n"> &#183; 14</span><span class="dot" aria-label="audio"></span></a></div>
 <header class="mast">
   <p class="kicker">Long-form, read so you don&#8217;t have to</p>
@@ -219,12 +238,10 @@ footer{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line);
   <button id="expand">Expand all</button>
 </div>
 <main><article class="brief " data-lane="" id="2026-08-30-diary-of-a-ceo-alex-hormozi-ai-business">
-<div class="meta"><a class="chip" href="https://www.youtube.com/watch?v=HwmwyBgzj8c" target="_blank" rel="noopener">source &#8599;</a></div>
+<div class="meta"><span class="chip">The Diary Of A CEO</span><span class="chip">2h22m37s</span><a class="chip" href="https://www.youtube.com/watch?v=HwmwyBgzj8c" target="_blank" rel="noopener">source &#8599;</a></div>
 <h3>Alex Hormozi&#x27;s Warning: Stop Chasing AI, Build This Instead!</h3>
 <p class="verdict">Watch it, especially 41:00–2:09:00.</p>
-<div class="body lead"><p><strong>Source:</strong> The Diary Of A CEO | <strong>Duration:</strong> 2h22m37s | <strong>Published:</strong> 20 Jul 2026
-<strong>URL:</strong> https://www.youtube.com/watch?v=HwmwyBgzj8c
-<strong>Lane:</strong> self | <strong>Gate:</strong> scored 8/7 vs threshold 7 (over-90min bucket) — briefed</p>
+<div class="body lead"><p><strong>Lane:</strong> self | <strong>Gate:</strong> scored 8/7 vs threshold 7 (over-90min bucket) — briefed</p>
 </div>
 <details open>
 <summary>Verdict</summary>
@@ -802,12 +819,10 @@ large exception to &quot;no capability gains&quot; and he moves past it quickly.
 </div>
 </details>
 </article><article class="brief " data-lane="" id="2026-08-30-fb-reel-five-steps-service-business">
-<div class="meta"><a class="chip" href="https://www.facebook.com/share/r/19HFYCY7UW/?mibextid=wwXIfr" target="_blank" rel="noopener">source &#8599;</a></div>
+<div class="meta"><span class="chip">Facebook page &quot;Alex Hormozi&quot;</span><span class="chip">0:14</span><a class="chip" href="https://www.facebook.com/share/r/19HFYCY7UW/?mibextid=wwXIfr" target="_blank" rel="noopener">source &#8599;</a></div>
 <h3>The Five Simplest Paths To Making Money (14s reel)</h3>
 <p class="verdict">Two useful lines, one broken one, two filler.</p>
-<div class="body lead"><p><strong>Source:</strong> Facebook page &quot;Alex Hormozi&quot; | <strong>Duration:</strong> 0:14 | <strong>Published:</strong> 30 Aug 2026
-<strong>URL:</strong> https://www.facebook.com/share/r/19HFYCY7UW/?mibextid=wwXIfr
-<strong>Lane:</strong> self | <strong>Gate:</strong> none — ad-hoc <code>/hearsay</code> read at Dane's request, not a Rundown poll run
+<div class="body lead"><p><strong>Lane:</strong> self | <strong>Gate:</strong> none — ad-hoc <code>/hearsay</code> read at Dane's request, not a Rundown poll run
 <strong>Engagement:</strong> 433K views, 6K reactions</p>
 </div>
 <details open>
@@ -1842,12 +1857,10 @@ does, under &quot;Migrate before the preview ends&quot;.</li>
 </div>
 </details>
 </article><article class="brief " data-lane="" id="2026-08-30-t-minus365-claude-sso-entra">
-<div class="meta"><a class="chip" href="https://www.youtube.com/watch?v=RkaDrYvlTkU" target="_blank" rel="noopener">source &#8599;</a></div>
+<div class="meta"><span class="chip">T-Minus365</span><span class="chip">14m17s</span><a class="chip" href="https://www.youtube.com/watch?v=RkaDrYvlTkU" target="_blank" rel="noopener">source &#8599;</a></div>
 <h3>How to Set Up Claude SSO with Microsoft 365 (10-Minute Walkthrough)</h3>
 <p class="verdict">Watch it.</p>
-<div class="body lead"><p><strong>Source:</strong> T-Minus365 | <strong>Duration:</strong> 14m17s | <strong>Published:</strong> 26 Jul 2026
-<strong>URL:</strong> https://www.youtube.com/watch?v=RkaDrYvlTkU
-<strong>Lane:</strong> work | <strong>Gate:</strong> scored 8/7 vs threshold 3 (under-15min bucket) — clear win, briefed</p>
+<div class="body lead"><p><strong>Lane:</strong> work | <strong>Gate:</strong> scored 8/7 vs threshold 3 (under-15min bucket) — clear win, briefed</p>
 </div>
 <details open>
 <summary>Verdict</summary>
@@ -2012,12 +2025,10 @@ fetched in full.</p>
 </div>
 </details>
 </article><article class="brief " data-lane="" id="2026-08-30-t-minus365-copilot-cowork-review">
-<div class="meta"><a class="chip" href="https://www.youtube.com/watch?v=EXa-_1YE854" target="_blank" rel="noopener">source &#8599;</a></div>
+<div class="meta"><span class="chip">T-Minus365</span><span class="chip">40m11s</span><a class="chip" href="https://www.youtube.com/watch?v=EXa-_1YE854" target="_blank" rel="noopener">source &#8599;</a></div>
 <h3>I Replaced Claude With Microsoft Cowork for a Month</h3>
 <p class="verdict">Watch it, skip the middle demo if pressed for time.</p>
-<div class="body lead"><p><strong>Source:</strong> T-Minus365 | <strong>Duration:</strong> 40m11s | <strong>Published:</strong> 12 Jul 2026
-<strong>URL:</strong> https://www.youtube.com/watch?v=EXa-_1YE854
-<strong>Lane:</strong> work | <strong>Gate:</strong> scored 7/6 vs threshold 5 (15–45min bucket) — briefed</p>
+<div class="body lead"><p><strong>Lane:</strong> work | <strong>Gate:</strong> scored 7/6 vs threshold 5 (15–45min bucket) — briefed</p>
 </div>
 <details open>
 <summary>Verdict</summary>
