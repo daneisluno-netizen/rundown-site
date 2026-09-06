@@ -38,21 +38,21 @@
    "briefs": [
     {
      "slug": "2026-09-03-modern-wisdom-sinclair-fasting-clip",
-     "title": "Untitled",
+     "title": "Modern wisdom sinclair fasting clip",
      "lane": "self",
-     "verdict": "Coverage caveat first: this is a short promotional clip of a longer podcast episode, not the full episode"
+     "verdict": "skip it (self lane, low signal, no independent data \u2014 see caveat below)"
     },
     {
      "slug": "2026-09-03-t-minus365-ai-rollout-4-stage-framework",
-     "title": "Untitled",
+     "title": "T minus365 ai rollout 4 stage framework",
      "lane": "work",
-     "verdict": ""
+     "verdict": "watch it"
     },
     {
      "slug": "2026-09-03-t-minus365-copilot-frontier-early-access",
-     "title": "Untitled",
+     "title": "T minus365 copilot frontier early access",
      "lane": "work",
-     "verdict": ""
+     "verdict": "watch it (7 minutes, direct admin how-to)"
     }
    ]
   },
@@ -118,13 +118,13 @@
      "slug": "2026-08-30-diary-of-a-ceo-alex-hormozi-ai-business",
      "title": "Alex Hormozi's Warning: Stop Chasing AI, Build This Instead!",
      "lane": "",
-     "verdict": "Source:"
+     "verdict": "Watch it, especially 41:00\u20132:09:00."
     },
     {
      "slug": "2026-08-30-diary-of-a-ceo-fathers-brains",
      "title": "The Scientist Who Scans Fathers' Brains \u2014 Dr Darby Saxby (The Diary Of A CEO)",
      "lane": "self",
-     "verdict": ""
+     "verdict": "Watch it."
     },
     {
      "slug": "2026-08-30-diary-of-a-ceo-seth-godin-quitting-perfectionism",
@@ -142,7 +142,7 @@
      "slug": "2026-08-30-fb-reel-five-steps-service-business",
      "title": "The Five Simplest Paths To Making Money (14s reel)",
      "lane": "",
-     "verdict": "Source:"
+     "verdict": "Two useful lines, one broken one, two filler."
     },
     {
      "slug": "2026-08-30-jonathan-edwards-copilot-sharepoint-governance",
@@ -184,13 +184,13 @@
      "slug": "2026-08-30-t-minus365-claude-sso-entra",
      "title": "How to Set Up Claude SSO with Microsoft 365 (10-Minute Walkthrough)",
      "lane": "",
-     "verdict": "Source:"
+     "verdict": "Watch it."
     },
     {
      "slug": "2026-08-30-t-minus365-copilot-cowork-review",
      "title": "I Replaced Claude With Microsoft Cowork for a Month",
      "lane": "",
-     "verdict": "Source:"
+     "verdict": "Watch it, skip the middle demo if pressed for time."
     },
     {
      "slug": "2026-08-30-t-minus365-sharepoint-sprawl-cleanup",
