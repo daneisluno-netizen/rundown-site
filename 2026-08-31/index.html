@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Rundown - Mon 31 Aug 2026</title>
+<meta name="description" content="Three items. Microsoft&#x27;s SharePoint/OneDrive sharing default flips before late October and the presenter&#x27;s site-level override claim looks wrong - check MC1454378 yourself. EWS retirement quietly takes cross-tenant calendar sharing with it; run Get-OrganizationRelationship to find the blast radius. ">
+<link rel="canonical" href="https://rundown.quontiant.co.uk/2026-08-31/">
+<link rel="alternate" type="application/rss+xml" title="The Rundown (podcast)" href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%F0%9F%93%BB%3C/text%3E%3C/svg%3E">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--ground:#E9ECEE;--surface:#FBFCFC;--sunk:#DFE4E7;--ink:#141A1E;--muted:#5B6970;--line:#CBD3D7;--accent:#0E7A6E;--accent-ink:#FFFFFF;--watch:#0E7A6E;--skip:#8A5140;--act:#9A6B12;
+  --measure:66ch;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono","Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#111619;--surface:#181F23;--sunk:#0C1013;--ink:#E4EAEC;--muted:#93A3AA;--line:#2A343A;--accent:#2FB6A3;--accent-ink:#0C1013;--watch:#2FB6A3;--skip:#D08B72;--act:#DCA83C;}}
+:root[data-theme="dark"]{--ground:#111619;--surface:#181F23;--sunk:#0C1013;--ink:#E4EAEC;--muted:#93A3AA;--line:#2A343A;--accent:#2FB6A3;--accent-ink:#0C1013;--watch:#2FB6A3;--skip:#D08B72;--act:#DCA83C;}
+
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.62;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:.18em}
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+.wrap{max-width:74ch;margin:0 auto;padding:0 20px 96px}
+
+/* --- masthead --- */
+.mast{padding:56px 0 28px;border-bottom:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.mast h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,8vw,62px);
+  line-height:.98;letter-spacing:-.025em;margin:0;text-wrap:balance}
+.mast .edition{font-family:var(--mono);font-size:13px;color:var(--muted);
+  margin:14px 0 0;font-variant-numeric:tabular-nums}
+
+/* --- listen --- */
+.listen{margin:22px 0 0;padding:18px;background:var(--surface);
+  border:1px solid var(--line);border-radius:4px}
+.listen h2{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 12px;font-weight:500}
+.listen audio{width:100%;height:38px;display:block}
+.listen .sub{margin:12px 0 0;font-size:14px;color:var(--muted)}
+.listen .none{margin:0;font-size:15px;color:var(--muted)}
+
+/* --- controls --- */
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding:22px 0;position:sticky;top:0;background:var(--ground);z-index:5;
+  border-bottom:1px solid var(--line)}
+.controls .spacer{flex:1}
+button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;padding:7px 13px;border-radius:3px;cursor:pointer;
+  border:1px solid var(--line);background:transparent;color:var(--muted)}
+button:hover{color:var(--ink);border-color:var(--muted)}
+button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);
+  border-color:var(--accent)}
+
+/* --- brief card --- */
+.brief{border-bottom:1px solid var(--line);padding:30px 0}
+.brief[hidden]{display:none}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;align-items:center}
+.chip{font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+  padding:3px 8px;border-radius:3px;background:var(--sunk);color:var(--muted);
+  font-variant-numeric:tabular-nums;text-decoration:none}
+.chip.lane{color:var(--accent-ink);background:var(--accent)}
+.brief h3{font-family:var(--display);font-weight:700;
+  font-size:clamp(22px,3.6vw,29px);line-height:1.13;letter-spacing:-.015em;
+  margin:0 0 10px;text-wrap:balance}
+.verdict{margin:0;font-size:17px;line-height:1.5;
+  border-left:3px solid var(--watch);padding-left:14px}
+.brief.is-skip .verdict{border-left-color:var(--skip)}
+.brief.is-act .verdict{border-left-color:var(--act)}
+/* One <details> per section of the brief. The summary IS the section heading,
+   so it is set as one -- a mono micro-label would read as chrome and get
+   skipped, and these are the only navigation the card has. */
+details{border-top:1px solid var(--line)}
+.brief > details:first-of-type{margin-top:16px}
+summary{font-family:var(--display);font-weight:600;font-size:15px;
+  letter-spacing:-.005em;color:var(--ink);cursor:pointer;padding:11px 0;
+  list-style:none;display:flex;align-items:baseline;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font-family:var(--mono);font-size:13px;
+  line-height:1;width:11px;flex:none;color:var(--muted)}
+details[open] summary::before{content:"\2212"}
+summary:hover,summary:hover::before{color:var(--accent)}
+details[open] summary{color:var(--muted)}
+details > .body{padding-bottom:14px}
+/* The lead paragraph is never hidden -- it is the reasoning behind the verdict
+   and it is two sentences. */
+.body.lead{padding:14px 0 2px}
+.body.lead p:last-child{margin-bottom:0}
+
+/* --- brief body --- */
+.body{max-width:var(--measure);padding:6px 0 4px}
+.body h2{font-family:var(--display);font-weight:700;font-size:19px;
+  letter-spacing:-.01em;margin:30px 0 10px;text-wrap:balance}
+.body h3{font-family:var(--display);font-size:16px;margin:22px 0 8px}
+.body p{margin:0 0 15px}
+.body ul,.body ol{margin:0 0 15px;padding-left:22px}
+.body li{margin:0 0 7px}
+.body blockquote{margin:0 0 15px;padding-left:16px;
+  border-left:2px solid var(--line);color:var(--muted)}
+.body code{font-family:var(--mono);font-size:.85em;background:var(--sunk);
+  padding:1px 5px;border-radius:3px}
+.body pre{background:var(--sunk);padding:14px;border-radius:4px;overflow-x:auto}
+.body pre code{background:none;padding:0}
+.body hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+.tablewrap{overflow-x:auto;margin:0 0 18px;border:1px solid var(--line);
+  border-radius:4px}
+.body table{border-collapse:collapse;width:100%;font-family:var(--display);
+  font-size:14px;line-height:1.45}
+.body th,.body td{text-align:left;padding:9px 12px;
+  border-bottom:1px solid var(--line);vertical-align:top}
+.body th{font-weight:600;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);background:var(--sunk)}
+.body tbody tr:last-child td{border-bottom:0}
+/* Timecodes and claim labels are the spine of these briefs -- set as data. */
+.body td:first-child{font-family:var(--mono);font-size:12.5px;
+  font-variant-numeric:tabular-nums;color:var(--muted)}
+
+/* --- archive --- */
+.archive{margin:44px 0 0}
+.archive > h2{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 4px;font-weight:500}
+.archive .datehead{font-family:var(--mono);font-size:13px;color:var(--muted);
+  margin:26px 0 0;font-variant-numeric:tabular-nums}
+.archive .brief h3{font-size:20px}
+.empty{color:var(--muted);font-size:15px}
+footer{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* --- site chrome, on top of the artifact stylesheet --- */
+.nav{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;
+  padding:16px 0;border-bottom:1px solid var(--line)}
+.nav .brand{font-family:var(--display);font-weight:800;font-size:15px;
+  letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.nav .brand span{color:var(--muted);font-weight:500}
+.nav .spacer{flex:1}
+.nav a.link{font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);text-decoration:none}
+.nav a.link:hover{color:var(--accent)}
+.mast{padding-top:40px}
+.mast .edition a{color:inherit}
+
+/* --- listen block extras --- */
+.listen .ep{font-family:var(--display);font-weight:600;font-size:16px;
+  margin:0 0 6px;letter-spacing:-.005em}
+.listen .notes{margin:0 0 12px;font-size:15px;color:var(--muted)}
+.listen .row{display:flex;flex-wrap:wrap;gap:8px 16px;margin:10px 0 0;
+  font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);
+  font-variant-numeric:tabular-nums}
+.listen .row a{color:var(--muted)}
+.listen .row a:hover{color:var(--accent)}
+
+/* --- edition strip --- */
+.strip{display:flex;gap:6px;overflow-x:auto;padding:14px 0 4px;
+  scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.strip a{flex:none;font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+  padding:5px 9px;border-radius:3px;background:var(--sunk);color:var(--muted);
+  text-decoration:none;font-variant-numeric:tabular-nums;
+  border:1px solid transparent}
+.strip a:hover{color:var(--ink);border-color:var(--muted)}
+.strip a[aria-current="page"]{background:var(--accent);color:var(--accent-ink)}
+.strip a .n{opacity:.7}
+.strip a .dot{display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:currentColor;margin-left:6px;vertical-align:middle}
+
+/* --- archive of editions --- */
+.editions{margin:44px 0 0}
+.editions > h2{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 4px;font-weight:500}
+.editions .window{font-size:14px;color:var(--muted);margin:0 0 8px}
+.ed{border-top:1px solid var(--line);padding:24px 0;display:grid;
+  grid-template-columns:minmax(0,1fr);gap:8px 24px}
+@media (min-width:640px){.ed{grid-template-columns:150px minmax(0,1fr)}}
+.ed .when{font-family:var(--mono);font-size:13px;color:var(--muted);
+  font-variant-numeric:tabular-nums;line-height:1.5}
+.ed .when a{color:inherit;text-decoration:none}
+.ed .when a:hover{color:var(--accent)}
+.ed .when small{display:block;font-size:11px;letter-spacing:.06em;
+  text-transform:uppercase}
+.ed h3{font-family:var(--display);font-weight:700;font-size:20px;
+  line-height:1.15;letter-spacing:-.012em;margin:0 0 6px;text-wrap:balance}
+.ed h3 a{color:inherit;text-decoration:none}
+.ed h3 a:hover{color:var(--accent)}
+.ed .notes{margin:0 0 10px;font-size:15px;color:var(--muted)}
+.ed ul{margin:0 0 12px;padding-left:18px;font-family:var(--display);
+  font-size:14.5px;line-height:1.45}
+.ed li{margin:0 0 4px}
+.ed li a{color:var(--ink);text-decoration:none}
+.ed li a:hover{color:var(--accent)}
+.ed li .v{color:var(--muted)}
+.ed audio{width:100%;height:36px;display:block;margin:4px 0 0}
+.ed .noaudio{font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+  color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav"><a class="brand" href="/">The Rundown <span>&#183; rundown.quontiant.co.uk</span></a><span class="spacer"></span><a class="link" href="/">Latest</a><a class="link" href="/#editions">Editions</a><a class="link" href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml" target="_blank" rel="noopener">Podcast feed</a></nav>
+<div class="strip" aria-label="Editions"><a href="/2026-09-06/" title="Sun 06 Sep 2026: 3 briefs, audio">09-06<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-09-03/" title="Thu 03 Sep 2026: 3 briefs">09-03<span class="n"> &#183; 3</span></a><a href="/2026-09-02/" title="Wed 02 Sep 2026: 3 briefs, audio">09-02<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-08-31/" aria-current="page" title="Mon 31 Aug 2026: 3 briefs, audio">08-31<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-08-30/" title="Sun 30 Aug 2026: 14 briefs, audio">08-30<span class="n"> &#183; 14</span><span class="dot" aria-label="audio"></span></a></div>
+<header class="mast">
+  <p class="kicker">Long-form, read so you don&#8217;t have to</p>
+  <h1>SharePoint sharing, one real payment, the father brain</h1>
+  <p class="edition">Mon 31 Aug 2026 &#183; 3 briefs</p>
+  <div class="listen"><h2>Listen</h2><p class="ep">The Rundown - Monday: SharePoint sharing, one real payment, the father brain</p><p class="notes">Three items. Microsoft&#x27;s SharePoint/OneDrive sharing default flips before late October and the presenter&#x27;s site-level override claim looks wrong - check MC1454378 yourself. EWS retirement quietly takes cross-tenant calendar sharing with it; run Get-OrganizationRelationship to find the blast radius. The SMS MFA hard date is 1 Feb 2027, not September. Dan Martell&#x27;s three questions for a one-person AI business, with the thing to actually do: one-page offer, ten MSPs, ask for a paid pilot this week - but not via his take-a-real-card trick. And the exploration pick: the father-brain episode this engine wrongly binned, where the usable finding is validation as the opener in any argument.</p><audio controls preload="metadata" src="/audio/2026-08-31-rundown.mp3"></audio><div class="row"><span>4:58</span><span>1.8 MB</span><a href="/audio/2026-08-31-rundown.mp3" download>Download MP3</a><a href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml" target="_blank" rel="noopener">Subscribe in a podcast app</a></div></div>
+</header>
+<div class="controls">
+  <button id="all" aria-pressed="true">All</button><button data-lane="self" aria-pressed="false">self</button><button data-lane="work" aria-pressed="false">work</button>
+  <span class="spacer"></span>
+  <button id="expand">Expand all</button>
+</div>
+<main><article class="brief " data-lane="self" id="2026-08-31-dan-martell-one-person-ai-business">
+<div class="meta"><span class="chip lane">self</span><span class="chip">Dan Martell</span><span class="chip">18m 29s</span><a class="chip" href="https://www.youtube.com/watch?v=1BApLicRt1w" target="_blank" rel="noopener">source &#8599;</a></div>
+<h3>How to start a 1-person business with AI (Dan Martell)</h3>
+<p class="verdict">Watch it — 04:00 to 15:00, at 1.5x.</p>
+<div class="body lead"><p>The first four minutes are the setup and
+the last three are a call-to-action. The middle eleven are three prompts and a
+validation test that map directly onto the thing you are currently stuck on.</p>
+<ul>
+<li><strong>This is the video you sent.</strong> Briefed on your request, not on the gate — it
+scored 5/5 against an effective threshold of 7 under the new +2 override, so
+the gate would have thin-sliced it. Your override stands; the score is recorded
+in the gate log so the disagreement is visible rather than quietly resolved.</li>
+</ul>
+</div>
+<details open>
+<summary>Bottom line</summary>
+<div class="body">
+<p>Three questions to run through an AI before building anything: what problem are
+people <strong>already paying someone else</strong> to solve (painkiller, not vitamin); what
+is my unfair advantage; and can I get one real payment in the next seven days.
+The content is unusually mechanism-heavy for the genre — he gives the actual
+prompt text, not a framework acronym — and one of the three mechanisms is a
+direct hit on where your own record says you get stuck.</p>
+<p>The thing worth stealing is not the framework. It is <strong>question three</strong>: prove
+demand with a payment before building. [[project-acquisition]] records seven
+ideas killed and zero validated, with the next gate being &quot;talking to real MSPs,
+not idea #8&quot;. That is question three, and he gives you the script for it.</p>
+</div>
+</details>
+<details>
+<summary>What it actually says</summary>
+<div class="body">
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00–02:00</td>
+<td>The reframe: not &quot;what do I want to build&quot; but &quot;what problem are people already paying someone else to solve&quot;. His two failed companies (a vacation rental site, a hosting company) both started from the wrong question; Spheric started from the right one.</td>
+</tr>
+<tr>
+<td>02:00–04:00</td>
+<td>Vitamin vs painkiller. When budgets tighten, vitamins go first. People pay for exactly three things: money, time, status. Miss all three and you built a vitamin. Build a &quot;frustration list&quot; — write down everything that annoys you for a day — to train the noticing muscle.</td>
+</tr>
+<tr>
+<td>04:00–05:00</td>
+<td><strong>Manual shortcut:</strong> ring the consulting firms already serving that market. They only sell services there is demand for, so their service list is a paid-for pain list.</td>
+</tr>
+<tr>
+<td>05:00–06:00</td>
+<td><strong>Prompt 1 (verbatim-ish):</strong> &quot;I want to start an AI-first business in [industry]. Give me 10 observable and nuanced pain points people in this industry deal with every day. Not the obvious stuff — the ones you'd only catch if you were in the room. Only pains that are getting worse, not better. Rank by willingness to pay. Ask me any question you need for clarity.&quot;</td>
+</tr>
+<tr>
+<td>06:00–08:00</td>
+<td>Edge. His brother's house-building business: the edge was not cheapness, it was doing customer research nobody else did, then pre-selling 16 homes off renderings before breaking ground, plus a &quot;99 days or less&quot; promise competitors could match but wouldn't claim.</td>
+</tr>
+<tr>
+<td>08:00–10:00</td>
+<td><strong>Prompt 2, three steps:</strong> connect everything (mail, calendar, chat, financials) so the model knows you; ask &quot;based on everything you know about me, where do I have an unfair advantage — what can I do better than 97% of people&quot;; then &quot;interview me about the last 10 years, 10 questions one at a time&quot;; then force it to argue: &quot;Be brutally honest. Is that actually rare or am I overrating myself? Where would someone who's done this their whole career crush me?&quot;</td>
+</tr>
+<tr>
+<td>10:00–11:00</td>
+<td>Cross-reference: &quot;where do the painkiller and the edge overlap — and if they don't, say so.&quot; His line: <strong>pain alone is a market, edge alone is a resume; the business is the crossing.</strong></td>
+</tr>
+<tr>
+<td>11:00–13:00</td>
+<td><strong>The Wizard of Oz test.</strong> At Flowtown he built a landing page and full signup with a real card entry, and 20% went through — then told them &quot;servers over capacity&quot;, because there was no product. Simulate the transaction before building.</td>
+</tr>
+<tr>
+<td>13:00–15:00</td>
+<td><strong>Prompt 3, four parts:</strong> design the cheapest test that gets one real payment in 7 days, no site/brand/logo/registration; write the one-page offer (promise, timeline, price, nothing else); &quot;give me the 10 people to contact first, the exact message, and the follow-up that asks for money — not a call, not a demo, cash&quot;; then &quot;why would someone say they want this and never pay? What's my riskiest assumption?&quot;</td>
+</tr>
+<tr>
+<td>15:00–17:00</td>
+<td>Two killers: falling in love with your solution instead of the customer's problem; and <strong>letting the AI flatter you.</strong> &quot;It is world-class at being a people pleaser.&quot; Fix: end every prompt with &quot;now push back on me — tell me why this fails, where am I kidding myself&quot;. He calls it red teaming.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+<details>
+<summary>Verification</summary>
+<div class="body">
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Verdict</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;Over 600 businesses fail every single day in the United States&quot;</td>
+<td><strong>Contradicted — understated</strong></td>
+<td>BLS Business Employment Dynamics puts US establishment deaths near 800k–900k a year, i.e. well over 2,000 a day. 600/day implies ~220k/year. The rhetorical point survives; the number is wrong in his favour by roughly 3–4x.</td>
+</tr>
+<tr>
+<td>Sold Spheric Technologies about four years in</td>
+<td><strong>Unverifiable here</strong></td>
+<td>Biographical, widely repeated, no independent check attempted.</td>
+</tr>
+<tr>
+<td>&quot;We've launched 12 companies in the last 18 months&quot;</td>
+<td><strong>Unverifiable</strong></td>
+<td>Self-reported, no register cited. Treat as marketing.</td>
+</tr>
+<tr>
+<td>Flowtown landing-page test: 20% entered a real card</td>
+<td><strong>Unverifiable</strong></td>
+<td>Single self-reported figure from a company sold in 2011. The technique is sound; the conversion number is an anecdote.</td>
+</tr>
+<tr>
+<td>Tool he calls &quot;WhisperFlow&quot; for voice prompting</td>
+<td><strong>Name garbled</strong></td>
+<td>The product is <strong>Wispr Flow</strong>. Auto-caption artefact — do not search for the transcript spelling.</td>
+</tr>
+<tr>
+<td>&quot;Red teaming&quot; as a military practice of attacking your own plan</td>
+<td><strong>Confirmed, ordinary usage</strong></td>
+<td>Standard term; nothing controversial.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+<details>
+<summary>What it left out or got wrong</summary>
+<div class="body">
+<p><strong>1. The Wizard of Oz test as described is not safe to run in the UK.</strong> Taking a
+real card number for a product that does not exist, then telling the customer
+&quot;servers are over capacity&quot;, is misrepresentation, and holding card data outside
+a payment flow is a PCI and UK GDPR problem. He raises none of this — the story
+is told as a clever hack with no downside. For a UK seller aiming at MSPs, running
+it his way would be an own goal in the exact market where you are selling trust.</p>
+<p><strong>The same signal, safely:</strong> a Stripe payment link for a paid pilot or a
+refundable deposit — the money genuinely moves, you never touch card data, and a
+refund is a normal operation. That is a stronger validation than his version,
+because a completed payment beats an abandoned card entry.</p>
+<p><strong>2. &quot;Connect your Gmail, Slack, calendar, financials so it knows everything about
+you&quot; — from a man selling an AI operating system, with no word on data
+governance.</strong> You sell security posture for a living. Whatever you do personally,
+this is the paragraph that would end the conversation with any client who has a
+DPA. Worth noticing that the omission is total: not a caveat, not a footnote.</p>
+<p><strong>3. Nothing about what happens after the first payment.</strong> The whole video ends at
+one payment from ten hand-picked contacts. That is deliberately the scope, but it
+means the hard part for you — whether an agentic MSP technician can be <em>delivered</em>
+repeatably at a margin — is out of frame. Do not mistake clearing his bar for
+clearing yours.</p>
+<p><strong>4. It is a funnel.</strong> Three separate DM-me-on-Instagram calls to action for the
+&quot;AI Company OS&quot;, plus a partner pitch. That does not make the mechanism wrong —
+the mechanism is unusually concrete for this genre — but the free thing is the
+product and you are the lead.</p>
+</div>
+</details>
+<details open>
+<summary>The one thing worth trying</summary>
+<div class="body">
+<p><strong>Run question three this week against the agentic MSP technician idea, before
+building any more of it.</strong></p>
+<p>Concretely: write the one-page offer (promise, timeline, price), list ten MSPs
+you can actually reach, send the message, and ask for money — a paid pilot, not a
+call, not a demo. Stripe payment link, no product built.</p>
+<p>Your own record says the pattern is stopping at friction and relabelling it
+closure ([[project-life-direction]]), and that seven ideas have been killed with
+zero validated ([[project-acquisition]]). Both of those are what &quot;no real payment
+was ever asked for&quot; looks like from the inside. This is the cheapest possible
+test of whether idea #8 deserves to exist, and the answer arrives in seven days
+either way.</p>
+<p>Second, smaller: add &quot;now push back on me — tell me why this fails, where am I
+kidding myself&quot; to the end of your own prompts. You already have <code>/red-team</code> and
+<code>/second-brain</code> doing this at the session level; he is applying it per-answer,
+which is cheaper and catches the flattery earlier.</p>
+</div>
+</details>
+<details>
+<summary>Coverage and confidence</summary>
+<div class="body">
+<p>Read the full 4,069-word auto-caption transcript and the description. No frames
+opened; nothing here rests on anything visual. Caption quality good apart from
+the tool name. The prompt texts above are transcribed from speech and lightly
+tidied for punctuation — they are faithful in substance, not verbatim to the
+character. Confidence the three mechanisms are as described: <strong>0.95</strong>. Confidence
+in any self-reported number in the video: <strong>0.3</strong> — one of the two I could check
+was wrong by 3–4x.</p>
+</div>
+</details>
+</article><article class="brief " data-lane="self" id="2026-08-31-doac-darby-saxbe-father-brain">
+<div class="meta"><span class="chip lane">self</span><span class="chip">The Diary Of A CEO</span><span class="chip">1h 28m</span><a class="chip" href="https://www.youtube.com/watch?v=Ppyt3MptX5k" target="_blank" rel="noopener">source &#8599;</a></div>
+<h3>Dr Darby Saxbe on the father&#x27;s brain (Diary Of A CEO)</h3>
+<p class="verdict">Watch 01:08:00–01:16:00. That is the eight minutes with the advice in it.</p>
+<div class="body lead"><p>The other eighty are the science behind why the advice works, and they are
+genuinely good, but you have three kids — you have already run the experiment.</p>
+<ul>
+<li><strong>Exploration pick.</strong> This episode was <strong>rejected</strong> on a previous run at 3/10
+on the assumption you have no children. [[user]] records three. It was
+re-scored 6 after grounding and queued; this run is the Monday exploration arm
+cashing that queue. It is in the gate log as the engine's only recorded miss.</li>
+</ul>
+</div>
+<details open>
+<summary>Bottom line</summary>
+<div class="body">
+<p>Fatherhood measurably rewires men — about 1% of cortical grey matter lost,
+concentrated in the social-cognition network, plus roughly a quarter off
+testosterone — and the shrinkage is <strong>adaptive</strong>, not damage: the brain is
+pruning to run one job better. Saxbe's argument is that this is a <em>facultative</em>
+adaptation, meaning it scales with how hands-on you actually are. Dads who
+bonded more before birth and did more care afterwards showed <strong>more</strong> change.</p>
+<p>The load-bearing part for you is not the neuroscience. It is two findings that
+survive outside parenting: the couples who fought with contempt and stonewalling
+during pregnancy had measurably more complex births months later, and the single
+ingredient her lab found that flips a negative argument positive is
+<strong>validation</strong> — saying &quot;I see where you're coming from&quot; before anything else.</p>
+</div>
+</details>
+<details>
+<summary>What it actually says</summary>
+<div class="body">
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02:00–09:00</td>
+<td>Fathers lose grey matter volume, concentrated in the mentalizing network (understanding others' intentions) and visual areas (reading an infant's face). Volume loss = efficiency, not deficit — &quot;the director's cut becoming the theatrical release&quot;. Dads change mostly in the cortex; mums change across the cortex and subcortex both.</td>
+</tr>
+<tr>
+<td>08:00–09:00</td>
+<td><strong>Dose-dependent:</strong> dads who felt more bonded pre-birth, wanted more time off, and enjoyed and handled their babies more at 3 months had <em>more</em> shrinkage. That is the evidence it is adaptive rather than damage.</td>
+</tr>
+<tr>
+<td>09:00–15:00</td>
+<td>Testosterone: ~25% drop in hands-on fathers, from the Philippines longitudinal cohort. High T is for competing; low T is for investing. <strong>Both extremes are bad</strong> — very low post-birth T tracks with higher paternal postpartum depression; high T tracks with partner dissatisfaction, more reported intimate partner aggression and more parenting stress. Mid-range and flexible is the target, and you get there by protecting sleep, exercise and friendships, not by chasing a number.</td>
+</tr>
+<tr>
+<td>21:00–22:00</td>
+<td>Method: first-time-parent couples, recruited in pregnancy, blood/saliva/hair, brains scanned before and ~6 months after birth, and made to argue on camera twice.</td>
+</tr>
+<tr>
+<td>23:00–27:00</td>
+<td><strong>The birth finding.</strong> Couples who fought more negatively at ~6 months pregnant had more medically complex births per hospital charts, and rated them more stressful. Negative means criticism, contempt, stonewalling — not conflict as such. Her grad student's work finds the ingredient that turns a negative conflict positive is <strong>validation</strong>.</td>
+</tr>
+<tr>
+<td>28:00–34:00</td>
+<td>Cornerstone vs capstone: kids used to be the foundation you built a life on, now they are the trophy you earn after everything is perfect. Her adviser: &quot;there is no right time, you just have to make it work.&quot;</td>
+</tr>
+<tr>
+<td>31:00–33:00</td>
+<td>Bartlett's stat block on collapsing fertility (see verification).</td>
+</tr>
+<tr>
+<td>38:00–44:00</td>
+<td>Parenthood looks <strong>neuroprotective in later life</strong> — UK Biobank scans of 50s–60s show younger brain age with more children, plateauing at two or three. Her framing: &quot;sudoku for your social cognition&quot;. Short-term unhappiness, long-term fulfilment.</td>
+</tr>
+<tr>
+<td>45:00–47:00</td>
+<td>She <strong>politely disagrees</strong> with Erica Komisar on under-3s daycare — argues humans are cooperative breeders, group care from ~18 months is fine, very young babies do better with a stable primary attachment figure, and parenting stress is itself bad for kids.</td>
+</tr>
+<tr>
+<td>49:00–52:00</td>
+<td><strong>Maternal gatekeeping vs weaponised incompetence.</strong> Mum blocks dad's participation (&quot;hand him to me, I know what to do&quot;); or a competent dad suddenly cannot work out a nappy bag. Both are real, both compound, and both need settling before the birth.</td>
+</tr>
+<tr>
+<td>52:00–56:00</td>
+<td>Relationship satisfaction reliably dips after a birth. New fathers' depression risk is about <strong>twice</strong> the general male rate — still below new mothers'.</td>
+</tr>
+<tr>
+<td>57:00–01:01:00</td>
+<td>Cortisol: strongly <em>synchronised</em> couples reported lower marital satisfaction. You do not want to catch your partner's stress — you want to damp it. Complementary temperaments help until they entrench into fixed roles.</td>
+</tr>
+<tr>
+<td>01:06:00–01:08:00</td>
+<td>The &quot;who does what&quot; study: <strong>every single couple</strong> over-predicted how much the father would do. Yet dads who did more were happier, and the pre-birth use of &quot;we&quot; rather than &quot;I&quot; predicted post-birth satisfaction.</td>
+</tr>
+<tr>
+<td><strong>01:08:00–01:16:00</strong></td>
+<td><strong>The advice list.</strong> Have the division-of-labour conversation before the birth, plus values, family and schooling. Build a social support network before the birth — men's only confidant is usually their partner, who becomes unavailable. Protect sleep and sleep hygiene beforehand. Take the bonding opportunities, nappies included. Give yourself grace.</td>
+</tr>
+<tr>
+<td>01:16:00–01:19:00</td>
+<td>Dad bod: males gain weight around the transition, seen even in tamarin monkeys on a fixed diet. Women shown male body types rate the dad bod as signalling a more hands-on father.</td>
+</tr>
+<tr>
+<td>01:24:00–01:27:00</td>
+<td>Closing: the US has no federal paid parental leave; FMLA gives 12 weeks unpaid. ~80% support across both parties, no political will.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+<details>
+<summary>Verification</summary>
+<div class="body">
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Verdict</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First-time fathers lose ~1% cortical grey matter</td>
+<td><strong>Confirmed</strong></td>
+<td>Saxbe et al., <em>Cerebral Cortex</em> — <a href="https://academic.oup.com/cercor/article/33/7/4156/6691667">first-time fathers, two international samples</a> and the <a href="https://academic.oup.com/cercor/article/34/4/bhae126/7645338">2024 follow-up on engagement and mental health</a>. ~1% average, n=38 in the imaging sample. <strong>Small sample — she is candid about the effect, less so about the n.</strong></td>
+</tr>
+<tr>
+<td>Mothers lose ~2.5%</td>
+<td><strong>Plausible, unverified</strong></td>
+<td>Consistent with the maternal neuroplasticity literature; I did not verify that specific figure.</td>
+</tr>
+<tr>
+<td>~25% testosterone drop in hands-on fathers, Philippines longitudinal</td>
+<td><strong>Confirmed in direction and rough magnitude</strong></td>
+<td>Gettler, McDade, Feranil &amp; Kuzawa, <a href="https://www.pnas.org/doi/10.1073/pnas.1105403108"><em>PNAS</em> 2011</a>, 624 men followed 4.5 years in Cebu. Declines of this order in waking testosterone for new fathers, larger for hands-on carers. I read the abstract-level record, not the effect table — treat &quot;25%&quot; as approximately right, not quoted.</td>
+</tr>
+<tr>
+<td>97% of countries below replacement fertility by 2100</td>
+<td><strong>Confirmed</strong></td>
+<td>GBD 2021 fertility capstone, <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(24)00550-6/fulltext"><em>The Lancet</em> 2024</a> — 198 of 204 countries and territories.</td>
+</tr>
+<tr>
+<td>Global fertility fell from ~5 in 1950 to ~2.2 today</td>
+<td><strong>Confirmed</strong></td>
+<td>Same study.</td>
+</tr>
+<tr>
+<td>US total fertility rate at a record low of 1.6</td>
+<td><strong>Confirmed</strong></td>
+<td>CDC/NCHS: 1.621 in 2023, <strong>1.599 in 2024</strong> — an all-time recorded low.</td>
+</tr>
+<tr>
+<td>&quot;US births dropped 1% in 2025 to roughly 3.6 million&quot;</td>
+<td><strong>Date wrong</strong></td>
+<td>The record-low figures are <strong>2024</strong> data, published 2025. Bartlett's on-screen block labels them 2025. The magnitude is right, the year is not.</td>
+</tr>
+<tr>
+<td>New fathers' depression risk ~2x the general population</td>
+<td><strong>Unverified</strong></td>
+<td>Widely cited in the paternal perinatal mental health literature; not independently checked here.</td>
+</tr>
+<tr>
+<td>Oxytocin downregulating pro-inflammatory cytokines, reducing amyloid-beta toxicity</td>
+<td><strong>Animal models only</strong></td>
+<td>Bartlett reads this from a card and says &quot;studies on aging mice&quot;. The mouse work is real; the leap to human Alzheimer's protection is his, not hers, and she does not endorse it — she answers about pair bonding instead.</td>
+</tr>
+<tr>
+<td>FMLA = 12 weeks unpaid, ~80% bipartisan support for paid leave</td>
+<td><strong>Confirmed / unverified</strong></td>
+<td>FMLA's 12 unpaid weeks is correct. The 80% polling figure is his, unverified.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+<details>
+<summary>What is evidence and what is anecdote</summary>
+<div class="body">
+<p><strong>She is unusually clean on this, and it is the reason the episode is worth the
+time.</strong> The brain and hormone findings are her own lab's longitudinal work with
+pre-registered-style before/after design. She flags the limits herself — &quot;the
+human hormone literature is messy&quot;, &quot;a lot of these are weak correlations&quot;,
+&quot;I don't know that we know for sure if there's a dose of parenting involvement&quot;.
+That is a scientist, not a guest on a book tour pretending certainty.</p>
+<p><strong>But she is on a book tour.</strong> Both editions get held up at the end. The framing
+she is selling — &quot;great fathers are made, not born&quot; — is the book's thesis and
+every finding is arranged to support it. Nothing looks bent, but the selection is
+not neutral.</p>
+<p><strong>Two places to discount:</strong></p>
+<ul>
+<li><strong>The birth-complications finding is correlational, and she does not label it.</strong>
+Couples who fight with contempt at six months pregnant differ in a dozen other
+ways — stress, money, health, support — that also predict complicated births.
+She describes the mechanism as if the conflict causes the complication. It may;
+the study as described cannot show it.</li>
+<li><strong>Bartlett does most of the overclaiming, not her.</strong> The oxytocin/Alzheimer's
+passage, the fertility stat block, &quot;and that's proven by science&quot; about the dad
+bod — those are his. When a claim in this episode sounds too strong, check which
+voice said it. She repeatedly walks his framings back.</li>
+</ul>
+<p><strong>One genuine omission:</strong> an hour and a half on the transition to parenthood and
+essentially nothing on <strong>fathers of older children</strong>, beyond one second-hand line
+from Richard Reeves about paternity leave up to age 18. Every finding is anchored
+to birth and the first six months. With kids well past that, most of this episode
+describes a change that already happened to you — which is exactly why the useful
+eight minutes are the general relationship mechanics, not the neuroscience.</p>
+</div>
+</details>
+<details open>
+<summary>The one thing worth trying</summary>
+<div class="body">
+<p><strong>Use validation as the opener in the next disagreement you have — with anyone.</strong>
+&quot;I understand what you're saying, I see where you're coming from&quot; <em>before</em> your
+counter-argument. Her lab's finding is that this single behaviour is what flips a
+negative conflict positive, and her description of why is precise: once someone
+feels heard, the wind goes out of being furious.</p>
+<p>That is not really parenting advice. [[user_superdane]] records that your current
+first domain is communication and listening, and names the pattern you are
+working against — defaulting to debate and proving merit rather than listening.
+This is the smallest concrete version of the fix, it is testable this week, and
+it came out of a controlled conflict task rather than a self-help book.</p>
+<p>Secondary, if you want the neuroscience to pay for itself: the &quot;we&quot; versus &quot;I&quot;
+finding. Couples who talked about the work as <em>ours</em> before it arrived were more
+satisfied after — controlling for how they felt beforehand. That transfers
+straight to any shared project with a partner.</p>
+</div>
+</details>
+<details>
+<summary>Coverage and confidence</summary>
+<div class="body">
+<p>Read the full 17,135-word auto-caption transcript end to end, plus the
+description. No frames opened; nothing here rests on anything visual except the
+brain model and the monkey photos, which the audio describes adequately. Roughly
+five minutes of the runtime is sponsor reads (Shopify, Pipedrive, LinkedIn) and
+two subscribe appeals — excluded from the timestamps above. Caption quality good;
+names garbled in places (&quot;Derby&quot; for Darby, &quot;metricance&quot; for matrescence,
+&quot;polyandri&quot;, &quot;tamarind&quot; for tamarin). Confidence in the two headline findings
+(grey matter, testosterone): <strong>0.9</strong>, both independently confirmed against the
+primary literature. Confidence in the birth-complications causal story as
+narrated: <strong>0.4</strong> — the correlation is reported, the causation is implied.</p>
+</div>
+</details>
+</article><article class="brief " data-lane="work" id="2026-08-31-t-minus365-m365-august-updates">
+<div class="meta"><span class="chip lane">work</span><span class="chip">T-Minus365 (Nick Sorensen)</span><span class="chip">21m 26s</span><span class="chip">gate 8</span><a class="chip" href="https://www.youtube.com/watch?v=9C8ozWb1JWw" target="_blank" rel="noopener">source &#8599;</a></div>
+<h3>What&#x27;s New in Microsoft 365 — August 2026 (T-Minus365)</h3>
+<p class="verdict">Watch 06:00–08:00 and 08:00–11:00. Skip the rest.</p>
+<div class="body lead"><p>Everything else in the
+21 minutes is a competent read-out of the Message Center you can get from the
+blog. Those two stretches carry the only changes that alter what you have to do.</p>
+</div>
+<details open>
+<summary>Bottom line</summary>
+<div class="body">
+<p>The monthly MSP round-up. Two items in it are load-bearing for Quontiant and for
+your clients: the third-generation SharePoint/OneDrive sharing experience flips
+the default sharing link to &quot;only people you add&quot; between now and late October,
+and the EWS retirement drags free/busy, MailTips and calendar sharing onto
+Microsoft 365 Cross-Tenant Access Policy. Both are silent-breakage risks — they
+change behaviour without anyone touching a setting. The rest is passkey
+plumbing, Copilot rebrands and licensing promos.</p>
+<p>He is also the competitor. The mid-roll is an ad for CloudCapsule, his own
+60-second tenant assessment product, and it now has an &quot;investigations&quot; report
+built specifically around the SMS MFA retirement — the same event Quontiant
+shipped <code>SMS-VOICE-RETIREMENT-001</code> for last week.</p>
+</div>
+</details>
+<details>
+<summary>What it actually says</summary>
+<div class="body">
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Item</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:34–03:00</td>
+<td>Teams: mandatory participation consent; live-caption panel move; report-a-concern in meetings (Defender for O365 integration); Teams admin centre performance pane</td>
+<td>Housekeeping. The consent gate is the only one with a policy angle.</td>
+</tr>
+<tr>
+<td>02:00–03:00</td>
+<td><strong>Retirements:</strong> Teams live chat (starts Aug, EOL Oct); Teams↔Google Calendar sync (Oct)</td>
+<td>Client comms needed if either is in use.</td>
+</tr>
+<tr>
+<td>03:00–04:00</td>
+<td>CloudCapsule ad — new &quot;investigations&quot; report scoped to the SMS MFA retirement, incl. delaying the rollout per tenant</td>
+<td>Direct competitive read. See below.</td>
+</tr>
+<tr>
+<td>04:00–06:00</td>
+<td>Outlook: filter by event; mobile drag-drop reschedule; <strong>EWS retirement moves free/busy, MailTips, calendar sharing to cross-tenant access policy</strong>; 50→100 GB Business mailbox</td>
+<td>The EWS item is the sleeper. Cross-tenant calendar breaks with no config change.</td>
+</tr>
+<tr>
+<td><strong>06:00–08:00</strong></td>
+<td><strong>SharePoint/OneDrive third-generation sharing — the &quot;hero link&quot;. Default becomes &quot;only people you add&quot;. He says it overrides site-level settings.</strong></td>
+<td>Biggest change in the video. Mid-Sept → late Oct.</td>
+</tr>
+<tr>
+<td>07:00–08:00</td>
+<td>OneDrive macOS native sync engine; SharePoint Advanced Management &quot;Everyone except external users&quot; report extended to item level</td>
+<td>The EEEU report is the Copilot oversharing surface. SAM licence or Copilot licence required.</td>
+</tr>
+<tr>
+<td><strong>08:00–11:00</strong></td>
+<td><strong>Entra passkeys:</strong> register a passkey as the <em>first</em> method (no SMS/voice first); Windows Hello for Business and macOS Platform SSO usable as standalone MFA factors; passkeys for B2B guests</td>
+<td>This is the practical half of the SMS retirement story.</td>
+</tr>
+<tr>
+<td>11:00–13:00</td>
+<td>Intune: Remote Help unattended sign-in (E3/E5 or add-on); registry inventory (GA, works on Business Premium); app protection policy &quot;all device types&quot; targeting retires 11 Jan 2027 in favour of assignment filters</td>
+<td>The registry inventory is genuinely useful and licence-cheap.</td>
+</tr>
+<tr>
+<td>13:00–18:00</td>
+<td>Copilot: Outlook drafting on mobile; ask-Copilot in Teams; session sharing; <strong>effort levels to control credit burn</strong>; GitHub Copilot agent harness moves to consumption billing 1 Sept; app rebrand to &quot;Microsoft Copilot&quot;</td>
+<td>The billing items are the ones with money attached.</td>
+</tr>
+<tr>
+<td>18:00–21:00</td>
+<td>Defender XDR unified identity timeline; <strong>multi-tenant agent management in the M365 admin centre (public preview, for CSP/GDAP MSPs)</strong>; Purview adaptive scopes lifecycle status (E5); Purview suite 50% off Business Premium to end of December</td>
+<td>Multi-tenant agent management is the MSP-relevant one.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+<details>
+<summary>Verification</summary>
+<div class="body">
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Verdict</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Third-gen sharing experience, &quot;hero link&quot;, default = only people added to the file</td>
+<td><strong>Confirmed</strong></td>
+<td><a href="https://mc.merill.net/message/MC1454378">MC1454378</a>; <a href="https://techcommunity.microsoft.com/blog/onedriveblog/simple-smart-and-secure-the-next-step-in-sharing-files-in-microsoft-365/4411655">Microsoft Community Hub — &quot;Simple, Smart, and Secure&quot;</a>. Rollout Aug–Oct 2026, matching his mid-Sept→late-Oct window.</td>
+</tr>
+<tr>
+<td>That the new default <strong>overrides site-level settings</strong></td>
+<td><strong>Contradicted, partially</strong></td>
+<td>Public coverage says admins can still change the default per site collection or per OneDrive. See &quot;what it got wrong&quot;.</td>
+</tr>
+<tr>
+<td>EWS retirement moves free/busy, MailTips, calendar sharing to M365 Cross-Tenant Access Policy</td>
+<td><strong>Confirmed</strong></td>
+<td><a href="https://learn.microsoft.com/exchange/sharing/migrate-to-m365-xtap">Migrate to Microsoft 365 Cross-Tenant Access Policy</a>; <a href="https://learn.microsoft.com/graph/api/resources/m365-cross-tenant-access-policy-overview?view=graph-rest-1.0">M365 XTAP Graph overview</a>. Replaces Organization Relationship, Availability Address Space and Sharing Policies.</td>
+</tr>
+<tr>
+<td>His specific EWS dates (Oct start, April completion)</td>
+<td><strong>Unverified</strong></td>
+<td>Learn carries the migration path but not those dates; they'd be in the MC post. Treat as approximate.</td>
+</tr>
+<tr>
+<td>SMS/voice MFA retirement, passkey nudge from September</td>
+<td><strong>Confirmed</strong></td>
+<td><a href="https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement#retirement-timeline">Passkeys by default and retirement of Microsoft-provided SMS and voice</a>: 1 Sept 2026 auto-enable and nudge, <strong>1 Feb 2027 full retirement</strong>, blocking passkey registration after that with no opt-out.</td>
+</tr>
+<tr>
+<td>WHfB and macOS Platform SSO count as phishing-resistant MFA</td>
+<td><strong>Confirmed</strong></td>
+<td><a href="https://learn.microsoft.com/entra/identity/authentication/overview-authentication#phishing-resistant-authentication-methods">Entra authentication overview</a>; <a href="https://learn.microsoft.com/entra/identity/authentication/concept-authentication-platform-credential-for-macos">Platform Credential for macOS</a>. The <em>change</em> he describes (no longer erroring when a passkey is added alongside an existing WHfB key) is not separately documented — mechanism confirmed, fix unverified.</td>
+</tr>
+<tr>
+<td>Intune app protection &quot;all device types&quot; retiring 11 Jan 2027 for assignment filters</td>
+<td><strong>Unverified</strong></td>
+<td>Learn documents assignment filters for app protection policies but carries no retirement notice for the all-app-types target. Not contradicted — just unconfirmed outside the video.</td>
+</tr>
+<tr>
+<td>50% off Purview suite for Business Premium until end of December; Copilot at &quot;$32&quot; / &quot;$10 add-on&quot;</td>
+<td><strong>Unverified — do not repeat the numbers</strong></td>
+<td>Auto-captions mangle figures throughout this transcript (&quot;502 keys&quot; for FIDO2, &quot;midepptember&quot;). Price claims from a caption track are exactly the class of number you have been burned by before. Check the partner price list.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+<details>
+<summary>What it left out or got wrong</summary>
+<div class="body">
+<p><strong>1. The site-level override claim is the wrong way round, and it matters most.</strong>
+He says the new default &quot;would be overriding even the site level settings that you
+may have introduced&quot;. Public coverage of the rollout says the opposite: admins
+can change the new default on a <strong>per-site-collection or per-OneDrive basis</strong>.
+If you tell a client their carefully-set site defaults are about to be steamrolled
+and they aren't, you look careless; if you tell them nothing changes and the
+tenant default flips under them, worse. <strong>Read MC1454378 in the client's own
+Message Center before advising either way</strong> — this is a tenant-specific rollout
+and the MC post is authoritative where a YouTube summary is not.</p>
+<p><strong>2. He does not say what happens to existing links.</strong> The whole risk of a
+default-sharing change is the back catalogue, not the new shares. Microsoft's own
+Q&amp;A on changing the default link type indicates existing links keep working as
+issued — the default only affects new shares. He never addresses it, and it is
+the first question any client will ask.</p>
+<p><strong>3. The EWS item is under-sold.</strong> He calls it &quot;a lot to unpack&quot; and moves on. It
+is a break-with-no-config-change: cross-tenant free/busy today runs on
+Organization Relationship / Availability Address Space, both EWS-backed, and the
+replacement is an <strong>inbound-only</strong> policy that both tenants must configure
+independently. Any client sharing calendars with a partner org has a dated
+outage waiting. That is a bigger operational story than the passkey items he
+spends twice as long on.</p>
+<p><strong>4. No mention of the Feb 2027 blocking behaviour</strong> in the SMS section — only
+the September nudge. September is a nudge; <strong>1 February 2027</strong> is when sign-in
+breaks for users whose only method is SMS or voice, with no tenant opt-out. He
+briefs the soft date and omits the hard one.</p>
+</div>
+</details>
+<details open>
+<summary>Quontiant angle</summary>
+<div class="body">
+<p><strong>Commodity, and he owns the commodity.</strong> The mid-roll is the clearest
+competitive signal in the video: CloudCapsule now ships an &quot;investigations&quot;
+report built around exactly the SMS/voice retirement that <code>SMS-VOICE-RETIREMENT-001</code>
+covers — same event, same impacted-user scope, plus a rollout-delay action
+Quontiant does not have. This is [[project-quontiant-competitive]] playing out in
+real time: the M365-audit core keeps getting commoditised by the same people who
+make the content MSPs learn from.</p>
+<p>Two check candidates queued in <code>check-candidates.md</code> — a sharing-default drift
+check and an EWS/XTAP cross-tenant readiness check. The second is the better one:
+it is an <strong>outage</strong> check, not a best-practice check, and outage and cost are the
+corners the competitive note says survive.</p>
+</div>
+</details>
+<details open>
+<summary>For you</summary>
+<div class="body">
+<p><strong>Read MC1454378 in your own tenant this week and settle the client comms line on
+the sharing default before mid-September.</strong> That is the only item here with a
+deadline inside a month.</p>
+<p>After that, in order: check whether any client has an Organization Relationship or
+Availability Address Space configured (<code>Get-OrganizationRelationship</code>,
+<code>Get-AvailabilityAddressSpace</code>) — that is the EWS blast radius; then turn on Intune
+registry inventory, which is free on Business Premium and useful immediately.</p>
+<p>Do not repeat any price from this video to a client without checking the partner
+price list.</p>
+</div>
+</details>
+<details>
+<summary>Coverage and confidence</summary>
+<div class="body">
+<p>Read the full 4,380-word auto-caption transcript plus the description. Did <strong>not</strong>
+open MC1454378 itself, the linked tminus365 blog post, or any of the screenshots
+he refers to — several claims rest on screenshots I did not see, and I have said
+which. No frames opened. Caption quality mediocre: dates and product names are
+mangled throughout (&quot;midepptember&quot;, &quot;mid-occtober&quot;, &quot;intra&quot; for Entra, &quot;502 keys&quot;
+for FIDO2), so every date above is my reconstruction of a garbled caption, not a
+quoted figure. Confidence that the two headline changes are real and roughly on
+the stated timeline: <strong>0.9</strong> (both independently confirmed). Confidence in any
+specific date or price taken from this transcript alone: <strong>0.5</strong>.</p>
+</div>
+</details>
+</article></main>
+<section class="editions"><h2>Editions</h2><p class="window"><a href="/#editions">All editions from the last 60 days</a>, with audio.</p></section><footer>Generated from the delivered briefs in the vault. Nothing here is rewritten. <a href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml">Podcast feed</a></footer>
+</div>
+<script>
+(function () {
+  var main = document.querySelector('main');
+  var filters = Array.prototype.slice.call(
+    document.querySelectorAll('.controls button[data-lane], #all'));
+
+  function apply(lane) {
+    main.querySelectorAll('.brief').forEach(function (b) {
+      b.hidden = !(lane === 'all' || b.dataset.lane === lane);
+    });
+    filters.forEach(function (b) {
+      b.setAttribute('aria-pressed',
+        String((b.id === 'all' ? 'all' : b.dataset.lane) === lane));
+    });
+    try { localStorage.setItem('rundown.lane', lane); } catch (e) {}
+  }
+
+  filters.forEach(function (b) {
+    b.addEventListener('click', function () {
+      apply(b.id === 'all' ? 'all' : b.dataset.lane);
+    });
+  });
+
+  var saved = 'all';
+  try { saved = localStorage.getItem('rundown.lane') || 'all'; } catch (e) {}
+  if (saved !== 'all' && !document.querySelector('.controls [data-lane="' + saved + '"]')) {
+    saved = 'all';
+  }
+  apply(saved);
+
+  var toggle = document.getElementById('expand');
+  toggle.addEventListener('click', function () {
+    var open = toggle.textContent.trim() === 'Expand all';
+    document.querySelectorAll('main details').forEach(function (d) { d.open = open; });
+    toggle.textContent = open ? 'Collapse all' : 'Expand all';
+  });
+})();
+
+(function () {
+  // One thing playing at a time. Every edition on the archive has its own
+  // player, and two of them at once is noise.
+  var players = document.querySelectorAll('audio');
+  players.forEach(function (a) {
+    a.addEventListener('play', function () {
+      players.forEach(function (b) { if (b !== a && !b.paused) b.pause(); });
+    });
+  });
+})();
+</script>
+</body>
+</html>

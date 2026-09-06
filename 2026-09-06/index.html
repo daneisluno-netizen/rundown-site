@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Rundown - Sun 06 Sep 2026</title>
+<meta name="description" content="A contested Entra deadline (Microsoft&#x27;s own docs disagree on the day), a GA date that&#x27;s already moved since a July roundup was recorded, and Harvard&#x27;s Daniel Lieberman on why the Blue Zones longevity story doesn&#x27;t hold up. Full verification and what got left out on the page.">
+<link rel="canonical" href="https://rundown.quontiant.co.uk/2026-09-06/">
+<link rel="alternate" type="application/rss+xml" title="The Rundown (podcast)" href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%F0%9F%93%BB%3C/text%3E%3C/svg%3E">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--ground:#E9ECEE;--surface:#FBFCFC;--sunk:#DFE4E7;--ink:#141A1E;--muted:#5B6970;--line:#CBD3D7;--accent:#0E7A6E;--accent-ink:#FFFFFF;--watch:#0E7A6E;--skip:#8A5140;--act:#9A6B12;
+  --measure:66ch;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono","Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#111619;--surface:#181F23;--sunk:#0C1013;--ink:#E4EAEC;--muted:#93A3AA;--line:#2A343A;--accent:#2FB6A3;--accent-ink:#0C1013;--watch:#2FB6A3;--skip:#D08B72;--act:#DCA83C;}}
+:root[data-theme="dark"]{--ground:#111619;--surface:#181F23;--sunk:#0C1013;--ink:#E4EAEC;--muted:#93A3AA;--line:#2A343A;--accent:#2FB6A3;--accent-ink:#0C1013;--watch:#2FB6A3;--skip:#D08B72;--act:#DCA83C;}
+
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.62;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:.18em}
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+.wrap{max-width:74ch;margin:0 auto;padding:0 20px 96px}
+
+/* --- masthead --- */
+.mast{padding:56px 0 28px;border-bottom:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.mast h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,8vw,62px);
+  line-height:.98;letter-spacing:-.025em;margin:0;text-wrap:balance}
+.mast .edition{font-family:var(--mono);font-size:13px;color:var(--muted);
+  margin:14px 0 0;font-variant-numeric:tabular-nums}
+
+/* --- listen --- */
+.listen{margin:22px 0 0;padding:18px;background:var(--surface);
+  border:1px solid var(--line);border-radius:4px}
+.listen h2{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 12px;font-weight:500}
+.listen audio{width:100%;height:38px;display:block}
+.listen .sub{margin:12px 0 0;font-size:14px;color:var(--muted)}
+.listen .none{margin:0;font-size:15px;color:var(--muted)}
+
+/* --- controls --- */
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding:22px 0;position:sticky;top:0;background:var(--ground);z-index:5;
+  border-bottom:1px solid var(--line)}
+.controls .spacer{flex:1}
+button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;padding:7px 13px;border-radius:3px;cursor:pointer;
+  border:1px solid var(--line);background:transparent;color:var(--muted)}
+button:hover{color:var(--ink);border-color:var(--muted)}
+button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);
+  border-color:var(--accent)}
+
+/* --- brief card --- */
+.brief{border-bottom:1px solid var(--line);padding:30px 0}
+.brief[hidden]{display:none}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;align-items:center}
+.chip{font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+  padding:3px 8px;border-radius:3px;background:var(--sunk);color:var(--muted);
+  font-variant-numeric:tabular-nums;text-decoration:none}
+.chip.lane{color:var(--accent-ink);background:var(--accent)}
+.brief h3{font-family:var(--display);font-weight:700;
+  font-size:clamp(22px,3.6vw,29px);line-height:1.13;letter-spacing:-.015em;
+  margin:0 0 10px;text-wrap:balance}
+.verdict{margin:0;font-size:17px;line-height:1.5;
+  border-left:3px solid var(--watch);padding-left:14px}
+.brief.is-skip .verdict{border-left-color:var(--skip)}
+.brief.is-act .verdict{border-left-color:var(--act)}
+/* One <details> per section of the brief. The summary IS the section heading,
+   so it is set as one -- a mono micro-label would read as chrome and get
+   skipped, and these are the only navigation the card has. */
+details{border-top:1px solid var(--line)}
+.brief > details:first-of-type{margin-top:16px}
+summary{font-family:var(--display);font-weight:600;font-size:15px;
+  letter-spacing:-.005em;color:var(--ink);cursor:pointer;padding:11px 0;
+  list-style:none;display:flex;align-items:baseline;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font-family:var(--mono);font-size:13px;
+  line-height:1;width:11px;flex:none;color:var(--muted)}
+details[open] summary::before{content:"\2212"}
+summary:hover,summary:hover::before{color:var(--accent)}
+details[open] summary{color:var(--muted)}
+details > .body{padding-bottom:14px}
+/* The lead paragraph is never hidden -- it is the reasoning behind the verdict
+   and it is two sentences. */
+.body.lead{padding:14px 0 2px}
+.body.lead p:last-child{margin-bottom:0}
+
+/* --- brief body --- */
+.body{max-width:var(--measure);padding:6px 0 4px}
+.body h2{font-family:var(--display);font-weight:700;font-size:19px;
+  letter-spacing:-.01em;margin:30px 0 10px;text-wrap:balance}
+.body h3{font-family:var(--display);font-size:16px;margin:22px 0 8px}
+.body p{margin:0 0 15px}
+.body ul,.body ol{margin:0 0 15px;padding-left:22px}
+.body li{margin:0 0 7px}
+.body blockquote{margin:0 0 15px;padding-left:16px;
+  border-left:2px solid var(--line);color:var(--muted)}
+.body code{font-family:var(--mono);font-size:.85em;background:var(--sunk);
+  padding:1px 5px;border-radius:3px}
+.body pre{background:var(--sunk);padding:14px;border-radius:4px;overflow-x:auto}
+.body pre code{background:none;padding:0}
+.body hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+.tablewrap{overflow-x:auto;margin:0 0 18px;border:1px solid var(--line);
+  border-radius:4px}
+.body table{border-collapse:collapse;width:100%;font-family:var(--display);
+  font-size:14px;line-height:1.45}
+.body th,.body td{text-align:left;padding:9px 12px;
+  border-bottom:1px solid var(--line);vertical-align:top}
+.body th{font-weight:600;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);background:var(--sunk)}
+.body tbody tr:last-child td{border-bottom:0}
+/* Timecodes and claim labels are the spine of these briefs -- set as data. */
+.body td:first-child{font-family:var(--mono);font-size:12.5px;
+  font-variant-numeric:tabular-nums;color:var(--muted)}
+
+/* --- archive --- */
+.archive{margin:44px 0 0}
+.archive > h2{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 4px;font-weight:500}
+.archive .datehead{font-family:var(--mono);font-size:13px;color:var(--muted);
+  margin:26px 0 0;font-variant-numeric:tabular-nums}
+.archive .brief h3{font-size:20px}
+.empty{color:var(--muted);font-size:15px}
+footer{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* --- site chrome, on top of the artifact stylesheet --- */
+.nav{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;
+  padding:16px 0;border-bottom:1px solid var(--line)}
+.nav .brand{font-family:var(--display);font-weight:800;font-size:15px;
+  letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.nav .brand span{color:var(--muted);font-weight:500}
+.nav .spacer{flex:1}
+.nav a.link{font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);text-decoration:none}
+.nav a.link:hover{color:var(--accent)}
+.mast{padding-top:40px}
+.mast .edition a{color:inherit}
+
+/* --- listen block extras --- */
+.listen .ep{font-family:var(--display);font-weight:600;font-size:16px;
+  margin:0 0 6px;letter-spacing:-.005em}
+.listen .notes{margin:0 0 12px;font-size:15px;color:var(--muted)}
+.listen .row{display:flex;flex-wrap:wrap;gap:8px 16px;margin:10px 0 0;
+  font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);
+  font-variant-numeric:tabular-nums}
+.listen .row a{color:var(--muted)}
+.listen .row a:hover{color:var(--accent)}
+
+/* --- edition strip --- */
+.strip{display:flex;gap:6px;overflow-x:auto;padding:14px 0 4px;
+  scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.strip a{flex:none;font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+  padding:5px 9px;border-radius:3px;background:var(--sunk);color:var(--muted);
+  text-decoration:none;font-variant-numeric:tabular-nums;
+  border:1px solid transparent}
+.strip a:hover{color:var(--ink);border-color:var(--muted)}
+.strip a[aria-current="page"]{background:var(--accent);color:var(--accent-ink)}
+.strip a .n{opacity:.7}
+.strip a .dot{display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:currentColor;margin-left:6px;vertical-align:middle}
+
+/* --- archive of editions --- */
+.editions{margin:44px 0 0}
+.editions > h2{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 4px;font-weight:500}
+.editions .window{font-size:14px;color:var(--muted);margin:0 0 8px}
+.ed{border-top:1px solid var(--line);padding:24px 0;display:grid;
+  grid-template-columns:minmax(0,1fr);gap:8px 24px}
+@media (min-width:640px){.ed{grid-template-columns:150px minmax(0,1fr)}}
+.ed .when{font-family:var(--mono);font-size:13px;color:var(--muted);
+  font-variant-numeric:tabular-nums;line-height:1.5}
+.ed .when a{color:inherit;text-decoration:none}
+.ed .when a:hover{color:var(--accent)}
+.ed .when small{display:block;font-size:11px;letter-spacing:.06em;
+  text-transform:uppercase}
+.ed h3{font-family:var(--display);font-weight:700;font-size:20px;
+  line-height:1.15;letter-spacing:-.012em;margin:0 0 6px;text-wrap:balance}
+.ed h3 a{color:inherit;text-decoration:none}
+.ed h3 a:hover{color:var(--accent)}
+.ed .notes{margin:0 0 10px;font-size:15px;color:var(--muted)}
+.ed ul{margin:0 0 12px;padding-left:18px;font-family:var(--display);
+  font-size:14.5px;line-height:1.45}
+.ed li{margin:0 0 4px}
+.ed li a{color:var(--ink);text-decoration:none}
+.ed li a:hover{color:var(--accent)}
+.ed li .v{color:var(--muted)}
+.ed audio{width:100%;height:36px;display:block;margin:4px 0 0}
+.ed .noaudio{font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+  color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav"><a class="brand" href="/">The Rundown <span>&#183; rundown.quontiant.co.uk</span></a><span class="spacer"></span><a class="link" href="/">Latest</a><a class="link" href="/#editions">Editions</a><a class="link" href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml" target="_blank" rel="noopener">Podcast feed</a></nav>
+<div class="strip" aria-label="Editions"><a href="/2026-09-06/" aria-current="page" title="Sun 06 Sep 2026: 3 briefs, audio">09-06<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-09-03/" title="Thu 03 Sep 2026: 3 briefs">09-03<span class="n"> &#183; 3</span></a><a href="/2026-09-02/" title="Wed 02 Sep 2026: 3 briefs, audio">09-02<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-08-31/" title="Mon 31 Aug 2026: 3 briefs, audio">08-31<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-08-30/" title="Sun 30 Aug 2026: 14 briefs, audio">08-30<span class="n"> &#183; 14</span><span class="dot" aria-label="audio"></span></a></div>
+<header class="mast">
+  <p class="kicker">Long-form, read so you don&#8217;t have to</p>
+  <h1>SSPR dates, prompt injection slip, Blue Zones</h1>
+  <p class="edition">Sun 06 Sep 2026 &#183; 3 briefs</p>
+  <div class="listen"><h2>Listen</h2><p class="ep">The Rundown - Sat 6 Sep: SSPR dates, prompt injection slip, Blue Zones</p><p class="notes">A contested Entra deadline (Microsoft&#x27;s own docs disagree on the day), a GA date that&#x27;s already moved since a July roundup was recorded, and Harvard&#x27;s Daniel Lieberman on why the Blue Zones longevity story doesn&#x27;t hold up. Full verification and what got left out on the page.</p><audio controls preload="metadata" src="/audio/2026-09-06-rundown.mp3"></audio><div class="row"><span>3:46</span><span>2.7 MB</span><a href="/audio/2026-09-06-rundown.mp3" download>Download MP3</a><a href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml" target="_blank" rel="noopener">Subscribe in a podcast app</a></div></div>
+</header>
+<div class="controls">
+  <button id="all" aria-pressed="true">All</button>
+  <span class="spacer"></span>
+  <button id="expand">Expand all</button>
+</div>
+<main><article class="brief " data-lane="" id="2026-09-06-jonathan-edwards-sspr-registered-methods">
+<div class="meta"><a class="chip" href="https://www.youtube.com/watch?v=zAQG_4wPaXE" target="_blank" rel="noopener">source &#8599;</a></div>
+<h3>Your SSPR Is About To Stop Working — Jonathan Edwards</h3>
+<p class="verdict">WATCH IT.</p>
+<div class="body lead"><p>Named dated change, a control you can audit in your tenants today, with a five-minute Entra demo showing exactly where to look.</p>
+<p>Source: Jonathan Edwards (bearded365guy) | 5m56s video, ~2 min read | 4 Sep 2026
+https://www.youtube.com/watch?v=zAQG_4wPaXE</p>
+</div>
+<details>
+<summary>Topics covered</summary>
+<div class="body">
+<ul>
+<li><strong>SSPR registered-methods-only — a real, dated Entra change, but the exact date is contested even in Microsoft's own docs.</strong> ! Video says enforcement is 9 Nov 2026; the live Microsoft Learn page and a third-party MC mirror give three different day numbers for the same change (see Verification).</li>
+<li><strong>Root cause — &quot;name tag&quot; vs &quot;registered&quot; method.</strong> A phone number synced into <code>mobilePhone</code>/<code>businessPhone</code>/<code>otherMails</code> from on-prem AD (or typed in once) looks identical to a verified authentication method in the portal, but SSPR has been accepting both. After enforcement it accepts only the verified one.</li>
+<li><strong>86% of SSPR verifications already use registered methods</strong> — confirmed by Microsoft's own Message Center post; the other 14% is your at-risk population.</li>
+<li><strong>Pairs with the SMS/voice MFA retirement (1 Feb 2027)</strong> — fixing an unregistered phone number by re-registering the same phone number just re-solves for a method that's also being retired in three months. Register a passkey instead to fix both in one pass.</li>
+<li><strong>Demo: Entra admin center → Identity → Authentication methods → User registration details → filter by &quot;SSPR capable&quot; and by method type</strong> (e.g. passkey) to find who's exposed, tenant by tenant.</li>
+<li><strong>Registration campaign nudges start 5 Oct 2026</strong> per Microsoft — the one date every source agrees on.</li>
+</ul>
+</div>
+</details>
+<details>
+<summary>Worth your time if / skip if</summary>
+<div class="body">
+<p><strong>Worth your time if:</strong> you run MSP tenants and want the exact admin-center path to find at-risk users before the deadline, whichever day it lands on.
+<strong>Skip if:</strong> you already have a registration-campaign policy live and passkey-only rollout in progress — the demo tells you nothing new.</p>
+</div>
+</details>
+<details open>
+<summary>Bottom line</summary>
+<div class="body">
+<p>A real Entra Secure Future Initiative change is landing on your tenants in October/November 2026: SSPR will stop trusting an unregistered phone number sitting on a profile and will only accept methods a user has actually proven they control. The mechanism and the audit path are solid and worth five minutes. The specific enforcement date in the video should not be trusted without a fresh check closer to the time — see below.</p>
+</div>
+</details>
+<details>
+<summary>What it actually says</summary>
+<div class="body">
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0:00</td>
+<td>Cold open — Charles can't do SSPR because his &quot;registered&quot; phone was never actually registered</td>
+</tr>
+<tr>
+<td>1:27</td>
+<td>The name-tag vs registered-method distinction explained</td>
+</tr>
+<tr>
+<td>2:25</td>
+<td>What's changing: SSPR stops accepting unregistered directory data</td>
+</tr>
+<tr>
+<td>2:43</td>
+<td>Ties to SMS/voice MFA retirement — register a passkey to solve both at once; 86% stat</td>
+</tr>
+<tr>
+<td>4:12</td>
+<td>Demo — Entra admin center, User registration details, filtering by SSPR-capable and by method</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+<details>
+<summary>Verification</summary>
+<div class="body">
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Verdict</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSPR will stop accepting unregistered directory-sourced contact info (mobilePhone/businessPhone/otherMails)</td>
+<td><strong>Confirmed</strong> — the mechanism is real</td>
+<td><a href="https://learn.microsoft.com/en-us/entra/identity/authentication/howto-sspr-authenticationdata">Microsoft Learn: Prepopulate Contact Information for SSPR</a></td>
+</tr>
+<tr>
+<td>Enforcement date is 9 Nov 2026</td>
+<td><strong>Unconfirmed / contradicted.</strong> Three sources give three different pictures: an early MC1325414 archive gives campaign 6 Jul 2026 → enforcement 7 Sep 2026 (already superseded — that date is tomorrow relative to today and clearly didn't happen); a mirror of an updated MC1325414 gives campaign 5 Oct 2026 → enforcement 7 Nov 2026; the <strong>live</strong> Microsoft Learn page (updated 4 Aug 2026) states campaign nudges from <strong>9 Nov 2026</strong> and enforcement from <strong>5 Oct 2026</strong> — the opposite order, which reads like a documentation error since a nudge campaign following enforcement makes no operational sense. The one date all current sources agree on is <strong>5 Oct 2026</strong> appearing somewhere in the sequence.</td>
+<td><a href="https://mc.merill.net/message/MC1325414">mc.merill.net MC1325414</a>, <a href="https://learn.microsoft.com/en-us/entra/identity/authentication/howto-sspr-authenticationdata">Microsoft Learn (live, updated 2026-08-04)</a>, <a href="https://m365admin.handsontek.net/microsoft-entra-id-sspr-will-require-registered-authentication-methods-starting-september-7-2026/">m365admin.handsontek.net archive of original MC1325414</a></td>
+</tr>
+<tr>
+<td>86% of SSPR verifications already use registered methods</td>
+<td><strong>Confirmed</strong></td>
+<td>Same MC1325414 sources above</td>
+</tr>
+<tr>
+<td>SMS/voice MFA retirement is 1 Feb 2027, passkeys become default from 1 Sep 2026</td>
+<td><strong>Confirmed</strong></td>
+<td><a href="https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement">Microsoft Learn: Passkeys by default and retirement of SMS/voice</a></td>
+</tr>
+<tr>
+<td>Registration campaign nudges affected users from 5 Oct 2026</td>
+<td><strong>Confirmed as a date that appears in the sequence</strong> — but see above, it's not clear whether this is the nudge date or the enforcement date</td>
+<td>as above</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+<details>
+<summary>What it left out or got wrong</summary>
+<div class="body">
+<p>The video states a single, confident enforcement date (9 Nov 2026) with no hedge. That confidence isn't earned — Microsoft's own current documentation contradicts itself on the order of the two dates, and an earlier version of the same MC post had entirely different (already-passed) dates, meaning this has already been revised at least once. Anyone actioning this from the video alone risks working to the wrong deadline. The video also doesn't mention that new tenants created after 5 Jan 2026 have no legacy directory-sourced SSPR path to lose in the first place — this change matters most for older tenants.</p>
+</div>
+</details>
+<details open>
+<summary>Quontiant angle</summary>
+<div class="body">
+<p>A tenant-wide &quot;SSPR capable + method type&quot; scan is exactly a Graph-queryable, read-only check (<code>authenticationMethods</code> via <code>/users/{id}/authentication/methods</code>, <code>AuditLog.Read.All</code>/<code>UserAuthenticationMethod.Read.All</code> scope per Learn's permissions table). CIPP already surfaces authentication-method coverage in its standards reports, so this is <strong>not a moat</strong> — it's a real, actionable check but a commodity one. Worth queuing as a candidate anyway since the deadline gives it urgency; see <code>check-candidates.md</code>.</p>
+</div>
+</details>
+<details open>
+<summary>For you</summary>
+<div class="body">
+<p>Before you act on the November date, re-check the live MC1325414 message in your own tenant's Message Center — do not schedule client comms off this video or off this brief. The audit path (Entra admin center → Authentication methods → User registration details, filter SSPR-capable) is safe to run today regardless of the date confusion, and registering a passkey instead of a phone number is the correct fix either way.</p>
+</div>
+</details>
+<details>
+<summary>Coverage and confidence</summary>
+<div class="body">
+<p>Read the full transcript (909 words, clean auto-captions, no wpm warning) and the author's chapters — they agree with the narration, nothing extra found there. Did not open any frames or run screenread (talking-head cold-open plus a live portal demo described but not screen-read this run — worth a screenread pass if this gets escalated). Verified against Microsoft Learn, a Message Center archive site, and a second independent MC mirror. Confidence the underlying mechanism is real: 0.9. Confidence in the specific date named in the video: 0.3 — genuinely unresolved even at the source.</p>
+</div>
+</details>
+</article><article class="brief " data-lane="" id="2026-09-06-modern-wisdom-lieberman-blue-zones-scam">
+<div class="meta"><a class="chip" href="https://www.youtube.com/watch?v=YGAjgLtJJFI" target="_blank" rel="noopener">source &#8599;</a></div>
+<h3>The Biggest Nutrition Scam &quot;Experts&quot; Are Pushing — Chris Williamson w/ Daniel Lieberman</h3>
+<p class="verdict">WATCH IT</p>
+<div class="body lead"><p>— 10 minutes, well-evidenced debunk of a specific claimed pattern (Blue Zones), not a vague hot take.</p>
+<p>Source: Modern Wisdom (Chris Williamson), guest Daniel Lieberman, Harvard evolutionary biologist, author of &quot;Fed Up&quot; | 10m10s clip, ~2 min read | 11 Aug 2026
+https://www.youtube.com/watch?v=YGAjgLtJJFI</p>
+</div>
+<details>
+<summary>Topics covered</summary>
+<div class="body">
+<ul>
+<li><strong>Blue Zones &quot;live to 100&quot; claim rests on a tiny, noisy base rate</strong> — supposedly ~6 centenarians per 10,000 people vs ~3 per 10,000 in the US generally; a small absolute difference reads as a huge relative one.</li>
+<li><strong>Only 18% of validated supercentenarians worldwide have a birth certificate</strong> (per Saul Newman's research) — but Lieberman applies this figure specifically to &quot;these blue zones,&quot; which overstates what the underlying study measured (see Verification).</li>
+<li><strong>Loma Linda, California is a Blue Zone because of religious lifestyle choices (Seventh-day Adventists — no smoking, exercise, often vegetarian), not a diet secret</strong> — undermines the idea that a shared diet explains all five zones.</li>
+<li><strong>&quot;Optimal&quot; is presented as a marketing word, not a scientific one</strong> — Lieberman's stated trigger phrase, tied to the argument that individual variation (age, genetics, goals) makes a universal &quot;optimal diet&quot; close to meaningless.</li>
+<li><strong>Low-carb vs low-fat: efficacy ≠ effectiveness</strong> — low-carb diets show slightly higher weight-loss efficacy in controlled trials, but the effectiveness gap narrows in the real world because low-carb is harder to sustain.</li>
+</ul>
+</div>
+</details>
+<details>
+<summary>Worth your time if / skip if</summary>
+<div class="body">
+<p><strong>Worth your time if:</strong> you want a specific, named mechanism for why the Blue Zones story is weaker than it's marketed as — useful ammunition next time it comes up.
+<strong>Skip if:</strong> you've already read Saul Newman's paper or the CNBC/UCL coverage of his Ig Nobel win — this covers the same ground in conversation form.</p>
+</div>
+</details>
+<details open>
+<summary>Bottom line</summary>
+<div class="body">
+<p>The Blue Zones claim doesn't hold up well under Lieberman's specific critique — tiny base rates, a confirmed record-keeping/fraud problem in the source data, and at least one &quot;zone&quot; (Loma Linda) explained by religious lifestyle rather than diet. The one place the clip overreaches is applying an 18%-birth-certificate statistic about supercentenarians generally to the Blue Zones specifically, which is a real but smaller claim than stated.</p>
+</div>
+</details>
+<details>
+<summary>What it actually says</summary>
+<div class="body">
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0:00</td>
+<td>Blue Zones diet described, roughly Mediterranean-adjacent</td>
+</tr>
+<tr>
+<td>1:00</td>
+<td>The five named zones: Nicoya (Costa Rica), Sardinia, an unnamed Mediterranean island, Okinawa, Loma Linda</td>
+</tr>
+<tr>
+<td>2:00</td>
+<td>Base-rate problem: centenarian counts are statistical outliers, not a reproducible signal</td>
+</tr>
+<tr>
+<td>2:36</td>
+<td>Saul Newman's paper — birth certificate gap, self-reported ages</td>
+</tr>
+<tr>
+<td>4:00</td>
+<td>Loma Linda explained by Seventh-day Adventist lifestyle, not diet</td>
+</tr>
+<tr>
+<td>5:00</td>
+<td>&quot;Optimal&quot; as a marketing word — individual variation argument</td>
+</tr>
+<tr>
+<td>6:44</td>
+<td>Low-carb vs low-fat — efficacy vs effectiveness distinction</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+<details>
+<summary>Verification</summary>
+<div class="body">
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Verdict</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Only 18% of validated supercentenarians have a birth certificate</td>
+<td><strong>Confirmed for the underlying stat, overstated in scope.</strong> Newman's finding is about &quot;exhaustively validated supercentenarians&quot; worldwide, not specifically the five named Blue Zones — the clip presents it as if it's about the Blue Zones population directly</td>
+<td><a href="https://www.researchgate.net/publication/334497888">ResearchGate: Newman, &quot;Supercentenarians and the oldest-old are concentrated into regions with no birth certificates and short lifespans&quot;</a></td>
+</tr>
+<tr>
+<td>Saul Newman is &quot;a guy in Oxford&quot;</td>
+<td><strong>Confirmed, though incomplete.</strong> He holds a position at the Oxford Institute of Population Ageing; his headline-making 2024 Ig Nobel-winning work is credited to UCL's Centre for Longitudinal Studies. Both affiliations are real</td>
+<td><a href="https://www.ageing.ox.ac.uk/people/view/552">Oxford Institute of Population Ageing</a>, <a href="https://www.ucl.ac.uk/ioe/news/2024/sep/ucl-demographers-work-debunking-blue-zone-regions-exceptional-lifespans-wins-ig-nobel-prize">UCL IOE</a></td>
+</tr>
+<tr>
+<td>Loma Linda residents are largely Seventh-day Adventist, low-smoking, exercise-focused, often vegetarian</td>
+<td>Consistent with well-established public health literature on the Adventist Health Studies — not independently re-verified this run, treated as background knowledge rather than a fresh check</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Low-carb diets show higher weight-loss efficacy but smaller real-world effectiveness gap</td>
+<td>Consistent with the mainstream nutrition-science consensus (efficacy/effectiveness distinction is a standard framing) — not independently re-verified against a specific trial this run</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+<details>
+<summary>What it left out or got wrong</summary>
+<div class="body">
+<p>The 18%-birth-certificate figure is the one place this clip states something more specific than the source supports — it's framed as &quot;these blue zones&quot; when Newman's paper is about supercentenarian records generally, of which the named Blue Zones are a subset. The underlying critique (record-keeping problems inflate longevity claims) still stands; the precise percentage just isn't zone-specific the way it's presented.</p>
+</div>
+</details>
+<details>
+<summary>What is evidence and what is anecdote</summary>
+<div class="body">
+<p>The base-rate maths and the Newman citation are evidence — checkable, and they check out in substance. The Loma Linda explanation is a reasonable inference (well-documented Adventist lifestyle data exists) rather than a formally cited study in this clip. Lieberman is not selling anything in this segment — no product plug from him; the sponsor read (Function Health) is Chris Williamson's, not tied to the claims.</p>
+</div>
+</details>
+<details open>
+<summary>The one thing worth trying</summary>
+<div class="body">
+<p>Nothing prescriptive here — this is a debunk, not a protocol. The transferable habit is Lieberman's framing device: when a diet or health claim is marketed as &quot;optimal,&quot; ask optimal for whom and by what metric, rather than accepting the label.</p>
+</div>
+</details>
+<details>
+<summary>Coverage and confidence</summary>
+<div class="body">
+<p>This is a truncated promotional clip (10m10s) of a longer full episode — the clip explicitly ends with &quot;the full length episode is available right here,&quot; so there's more Lieberman content in the full episode not covered here. Read the full clip transcript (2,124 words, clean auto-captions, no wpm warning). Did not fetch or read the full-length episode. Verified the two most load-bearing claims (birth-certificate stat, Newman's affiliation) against sources outside the video; treated the Loma Linda and efficacy/effectiveness claims as consistent with established literature without a fresh citation check this run. Confidence: 0.75.</p>
+</div>
+</details>
+</article><article class="brief " data-lane="" id="2026-09-06-t-minus365-july-updates-roundup">
+<div class="meta"><a class="chip" href="https://www.youtube.com/watch?v=KiaczTKwfOI" target="_blank" rel="noopener">source &#8599;</a></div>
+<h3>What&#x27;s New in Microsoft 365 | July Updates — T-Minus365</h3>
+<p class="verdict">SKIM IT.</p>
+<div class="body lead"><p>Generic monthly roundup, no single control worth a dedicated watch, but it caught one dated correction worth two minutes: a GA date has slipped since this video published.</p>
+<p>Source: T-Minus365 | 14m31s video, ~3 min read | 2 Aug 2026
+https://www.youtube.com/watch?v=KiaczTKwfOI</p>
+</div>
+<details>
+<summary>Topics covered</summary>
+<div class="body">
+<ul>
+<li><strong>! Defender prompt injection protection GA has slipped from &quot;early September&quot; (what this video says) to early October 2026</strong> — confirmed independently, the delay happened after this video published.</li>
+<li><strong>CSS positioning removal for custom branding is real and dated</strong> — new use blocked from 21 Jul 2026, full retirement of positioning properties 26 Oct 2026 (video's vague &quot;October... complete November&quot; is roughly right but imprecise).</li>
+<li><strong>Passkeys become the default MFA registration method from September 2026</strong>, ahead of the Feb 2027 SMS/voice retirement — confirmed, matches Jonathan Edwards' video this run.</li>
+<li><strong>Defender Safe Attachments can now auto-quarantine password-protected attachments it can't scan</strong>, with self-release by password — plausible, not independently checked this run (see coverage).</li>
+<li><strong>Copilot bundled SKUs (Business Standard/Premium with Copilot) are real but the video's prices are off by a few pounds/dollars</strong> — confirmed $23.50 and $32/user/month, not the &quot;$22 and $32&quot; quoted.</li>
+<li><strong>Purview time-bound admin role assignments</strong> — a real PIM-like capability for compliance roles, separate from Entra PIM.</li>
+</ul>
+</div>
+</details>
+<details>
+<summary>Worth your time if / skip if</summary>
+<div class="body">
+<p><strong>Worth your time if:</strong> you want the one-line correction on the prompt-injection GA slip and nothing else.
+<strong>Skip if:</strong> you already read Microsoft's Message Center directly — this is a re-narration of it with no added analysis or control Dane could implement that isn't already in the raw MC feed.</p>
+</div>
+</details>
+<details open>
+<summary>Bottom line</summary>
+<div class="body">
+<p>This is exactly the kind of near-auto-accept-by-volume roundup the gate is tuned to be sceptical of: 20 announcements, no single one gets more than a sentence, and the chapters are just product names (Teams, Entra, Intune). The one thing worth carrying forward is that a dated GA in the video has already moved — a sign these roundups age fast and shouldn't be trusted for exact dates months after upload.</p>
+</div>
+</details>
+<details>
+<summary>What it actually says</summary>
+<div class="body">
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0:34</td>
+<td>Teams — meeting recap consolidation, Copilot AI meeting archive</td>
+</tr>
+<tr>
+<td>2:43</td>
+<td>M365 Apps — OneDrive folder exclusions, Edge screen-capture block for labelled PDFs</td>
+</tr>
+<tr>
+<td>3:51</td>
+<td>Entra — passkeys default, SMS/voice retirement, passkey restoration flow, passwordless password change, CSS retirement</td>
+</tr>
+<tr>
+<td>7:05</td>
+<td>Intune — device sync feedback loop</td>
+</tr>
+<tr>
+<td>7:45</td>
+<td>Copilot — Planner chat, custom skills in OneDrive, Excel brand kit, inline Outlook drafting, multi-user agent ownership</td>
+</tr>
+<tr>
+<td>10:20</td>
+<td>Admin — Defender safe attachments quarantine, prompt injection protection, Purview time-bound roles, Copilot trial and bundled SKU pricing, CSP incentive cuts</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+<details>
+<summary>Verification</summary>
+<div class="body">
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Verdict</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Defender prompt injection protection GA &quot;early September&quot;</td>
+<td><strong>Contradicted — date has moved.</strong> GA is now early October 2026, explicitly noted as delayed from early September</td>
+<td><a href="https://office365itpros.com/2026/08/04/microsoft-defender-prompt-injection/">office365itpros.com</a>, <a href="https://learn.microsoft.com/en-us/defender-office-365/step-by-step-guides/prompt-injection-protection-defender-for-office-365">Microsoft Learn</a></td>
+</tr>
+<tr>
+<td>CSS positioning retirement &quot;October... complete November&quot;</td>
+<td><strong>Roughly confirmed, imprecise.</strong> New use blocked 21 Jul 2026, positioning properties retire 26 Oct 2026, full CSS retirement not until 2027</td>
+<td><a href="https://mc.merill.net/message/MC1458474">mc.merill.net MC1458474</a></td>
+</tr>
+<tr>
+<td>Passkeys default from September 2026, SMS/voice retire Feb 2027</td>
+<td><strong>Confirmed</strong></td>
+<td><a href="https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement">Microsoft Learn</a></td>
+</tr>
+<tr>
+<td>Bundled Copilot SKUs $22 (standard) / $32 (premium)</td>
+<td><strong>Off by a few dollars.</strong> Actual pricing is $23.50 and $32/user/month</td>
+<td><a href="https://www.velosio.com/blog/m365-copilot-pricing-calculator/">velosio.com pricing calculator</a></td>
+</tr>
+<tr>
+<td>Safe Attachments auto-quarantine for password-protected files</td>
+<td>Not independently checked this run</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Purview time-bound admin roles</td>
+<td>Not independently checked this run</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+<details>
+<summary>What it left out or got wrong</summary>
+<div class="body">
+<p>The prompt-injection GA date and the Copilot SKU price are both slightly wrong as of today, which matters here specifically because monthly roundups like this are the kind of source Dane might reference weeks after publication without re-checking — the gap compounds. Nothing else materially wrong found in what was checked.</p>
+</div>
+</details>
+<details open>
+<summary>Quontiant angle</summary>
+<div class="body">
+<p>Nothing here clears the bar for a check candidate — this is a re-narration of Message Center items MSPs already get natively, and CIPP/Syncro already surface most of the same authentication and Defender configuration state. No candidate logged from this brief.</p>
+</div>
+</details>
+<details open>
+<summary>For you</summary>
+<div class="body">
+<p>Nothing actionable. If you want the prompt-injection or SSPR items acted on, use the dedicated briefs from Jonathan Edwards this run instead — they carry the actual control and demo.</p>
+</div>
+</details>
+<details>
+<summary>Coverage and confidence</summary>
+<div class="body">
+<p>Read the full transcript (2,893 words, clean auto-captions, no wpm warning) and chapters. Verified two of the roundup's more checkable claims (prompt-injection GA date, Copilot pricing) plus the two claims shared with the SSPR brief; did <strong>not</strong> independently verify the Safe Attachments quarantine behaviour, Purview time-bound roles, Teams meeting-recap consolidation, or the Intune sync feedback-loop claim — treat those as unverified. Confidence in what was checked: 0.85. Confidence in what wasn't: unknown, flagged rather than assumed correct.</p>
+</div>
+</details>
+</article></main>
+<section class="editions"><h2>Editions</h2><p class="window"><a href="/#editions">All editions from the last 60 days</a>, with audio.</p></section><footer>Generated from the delivered briefs in the vault. Nothing here is rewritten. <a href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml">Podcast feed</a></footer>
+</div>
+<script>
+(function () {
+  var main = document.querySelector('main');
+  var filters = Array.prototype.slice.call(
+    document.querySelectorAll('.controls button[data-lane], #all'));
+
+  function apply(lane) {
+    main.querySelectorAll('.brief').forEach(function (b) {
+      b.hidden = !(lane === 'all' || b.dataset.lane === lane);
+    });
+    filters.forEach(function (b) {
+      b.setAttribute('aria-pressed',
+        String((b.id === 'all' ? 'all' : b.dataset.lane) === lane));
+    });
+    try { localStorage.setItem('rundown.lane', lane); } catch (e) {}
+  }
+
+  filters.forEach(function (b) {
+    b.addEventListener('click', function () {
+      apply(b.id === 'all' ? 'all' : b.dataset.lane);
+    });
+  });
+
+  var saved = 'all';
+  try { saved = localStorage.getItem('rundown.lane') || 'all'; } catch (e) {}
+  if (saved !== 'all' && !document.querySelector('.controls [data-lane="' + saved + '"]')) {
+    saved = 'all';
+  }
+  apply(saved);
+
+  var toggle = document.getElementById('expand');
+  toggle.addEventListener('click', function () {
+    var open = toggle.textContent.trim() === 'Expand all';
+    document.querySelectorAll('main details').forEach(function (d) { d.open = open; });
+    toggle.textContent = open ? 'Collapse all' : 'Expand all';
+  });
+})();
+
+(function () {
+  // One thing playing at a time. Every edition on the archive has its own
+  // player, and two of them at once is noise.
+  var players = document.querySelectorAll('audio');
+  players.forEach(function (a) {
+    a.addEventListener('play', function () {
+      players.forEach(function (b) { if (b !== a && !b.paused) b.pause(); });
+    });
+  });
+})();
+</script>
+</body>
+</html>

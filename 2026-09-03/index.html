@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Rundown - Thu 03 Sep 2026</title>
+<meta name="description" content="3 briefs from Thu 03 Sep 2026.">
+<link rel="canonical" href="https://rundown.quontiant.co.uk/2026-09-03/">
+<link rel="alternate" type="application/rss+xml" title="The Rundown (podcast)" href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%F0%9F%93%BB%3C/text%3E%3C/svg%3E">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--ground:#E9ECEE;--surface:#FBFCFC;--sunk:#DFE4E7;--ink:#141A1E;--muted:#5B6970;--line:#CBD3D7;--accent:#0E7A6E;--accent-ink:#FFFFFF;--watch:#0E7A6E;--skip:#8A5140;--act:#9A6B12;
+  --measure:66ch;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono","Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#111619;--surface:#181F23;--sunk:#0C1013;--ink:#E4EAEC;--muted:#93A3AA;--line:#2A343A;--accent:#2FB6A3;--accent-ink:#0C1013;--watch:#2FB6A3;--skip:#D08B72;--act:#DCA83C;}}
+:root[data-theme="dark"]{--ground:#111619;--surface:#181F23;--sunk:#0C1013;--ink:#E4EAEC;--muted:#93A3AA;--line:#2A343A;--accent:#2FB6A3;--accent-ink:#0C1013;--watch:#2FB6A3;--skip:#D08B72;--act:#DCA83C;}
+
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.62;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:.18em}
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+.wrap{max-width:74ch;margin:0 auto;padding:0 20px 96px}
+
+/* --- masthead --- */
+.mast{padding:56px 0 28px;border-bottom:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.mast h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,8vw,62px);
+  line-height:.98;letter-spacing:-.025em;margin:0;text-wrap:balance}
+.mast .edition{font-family:var(--mono);font-size:13px;color:var(--muted);
+  margin:14px 0 0;font-variant-numeric:tabular-nums}
+
+/* --- listen --- */
+.listen{margin:22px 0 0;padding:18px;background:var(--surface);
+  border:1px solid var(--line);border-radius:4px}
+.listen h2{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 12px;font-weight:500}
+.listen audio{width:100%;height:38px;display:block}
+.listen .sub{margin:12px 0 0;font-size:14px;color:var(--muted)}
+.listen .none{margin:0;font-size:15px;color:var(--muted)}
+
+/* --- controls --- */
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding:22px 0;position:sticky;top:0;background:var(--ground);z-index:5;
+  border-bottom:1px solid var(--line)}
+.controls .spacer{flex:1}
+button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;padding:7px 13px;border-radius:3px;cursor:pointer;
+  border:1px solid var(--line);background:transparent;color:var(--muted)}
+button:hover{color:var(--ink);border-color:var(--muted)}
+button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);
+  border-color:var(--accent)}
+
+/* --- brief card --- */
+.brief{border-bottom:1px solid var(--line);padding:30px 0}
+.brief[hidden]{display:none}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;align-items:center}
+.chip{font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+  padding:3px 8px;border-radius:3px;background:var(--sunk);color:var(--muted);
+  font-variant-numeric:tabular-nums;text-decoration:none}
+.chip.lane{color:var(--accent-ink);background:var(--accent)}
+.brief h3{font-family:var(--display);font-weight:700;
+  font-size:clamp(22px,3.6vw,29px);line-height:1.13;letter-spacing:-.015em;
+  margin:0 0 10px;text-wrap:balance}
+.verdict{margin:0;font-size:17px;line-height:1.5;
+  border-left:3px solid var(--watch);padding-left:14px}
+.brief.is-skip .verdict{border-left-color:var(--skip)}
+.brief.is-act .verdict{border-left-color:var(--act)}
+/* One <details> per section of the brief. The summary IS the section heading,
+   so it is set as one -- a mono micro-label would read as chrome and get
+   skipped, and these are the only navigation the card has. */
+details{border-top:1px solid var(--line)}
+.brief > details:first-of-type{margin-top:16px}
+summary{font-family:var(--display);font-weight:600;font-size:15px;
+  letter-spacing:-.005em;color:var(--ink);cursor:pointer;padding:11px 0;
+  list-style:none;display:flex;align-items:baseline;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font-family:var(--mono);font-size:13px;
+  line-height:1;width:11px;flex:none;color:var(--muted)}
+details[open] summary::before{content:"\2212"}
+summary:hover,summary:hover::before{color:var(--accent)}
+details[open] summary{color:var(--muted)}
+details > .body{padding-bottom:14px}
+/* The lead paragraph is never hidden -- it is the reasoning behind the verdict
+   and it is two sentences. */
+.body.lead{padding:14px 0 2px}
+.body.lead p:last-child{margin-bottom:0}
+
+/* --- brief body --- */
+.body{max-width:var(--measure);padding:6px 0 4px}
+.body h2{font-family:var(--display);font-weight:700;font-size:19px;
+  letter-spacing:-.01em;margin:30px 0 10px;text-wrap:balance}
+.body h3{font-family:var(--display);font-size:16px;margin:22px 0 8px}
+.body p{margin:0 0 15px}
+.body ul,.body ol{margin:0 0 15px;padding-left:22px}
+.body li{margin:0 0 7px}
+.body blockquote{margin:0 0 15px;padding-left:16px;
+  border-left:2px solid var(--line);color:var(--muted)}
+.body code{font-family:var(--mono);font-size:.85em;background:var(--sunk);
+  padding:1px 5px;border-radius:3px}
+.body pre{background:var(--sunk);padding:14px;border-radius:4px;overflow-x:auto}
+.body pre code{background:none;padding:0}
+.body hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+.tablewrap{overflow-x:auto;margin:0 0 18px;border:1px solid var(--line);
+  border-radius:4px}
+.body table{border-collapse:collapse;width:100%;font-family:var(--display);
+  font-size:14px;line-height:1.45}
+.body th,.body td{text-align:left;padding:9px 12px;
+  border-bottom:1px solid var(--line);vertical-align:top}
+.body th{font-weight:600;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);background:var(--sunk)}
+.body tbody tr:last-child td{border-bottom:0}
+/* Timecodes and claim labels are the spine of these briefs -- set as data. */
+.body td:first-child{font-family:var(--mono);font-size:12.5px;
+  font-variant-numeric:tabular-nums;color:var(--muted)}
+
+/* --- archive --- */
+.archive{margin:44px 0 0}
+.archive > h2{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 4px;font-weight:500}
+.archive .datehead{font-family:var(--mono);font-size:13px;color:var(--muted);
+  margin:26px 0 0;font-variant-numeric:tabular-nums}
+.archive .brief h3{font-size:20px}
+.empty{color:var(--muted);font-size:15px}
+footer{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* --- site chrome, on top of the artifact stylesheet --- */
+.nav{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;
+  padding:16px 0;border-bottom:1px solid var(--line)}
+.nav .brand{font-family:var(--display);font-weight:800;font-size:15px;
+  letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.nav .brand span{color:var(--muted);font-weight:500}
+.nav .spacer{flex:1}
+.nav a.link{font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);text-decoration:none}
+.nav a.link:hover{color:var(--accent)}
+.mast{padding-top:40px}
+.mast .edition a{color:inherit}
+
+/* --- listen block extras --- */
+.listen .ep{font-family:var(--display);font-weight:600;font-size:16px;
+  margin:0 0 6px;letter-spacing:-.005em}
+.listen .notes{margin:0 0 12px;font-size:15px;color:var(--muted)}
+.listen .row{display:flex;flex-wrap:wrap;gap:8px 16px;margin:10px 0 0;
+  font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);
+  font-variant-numeric:tabular-nums}
+.listen .row a{color:var(--muted)}
+.listen .row a:hover{color:var(--accent)}
+
+/* --- edition strip --- */
+.strip{display:flex;gap:6px;overflow-x:auto;padding:14px 0 4px;
+  scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.strip a{flex:none;font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+  padding:5px 9px;border-radius:3px;background:var(--sunk);color:var(--muted);
+  text-decoration:none;font-variant-numeric:tabular-nums;
+  border:1px solid transparent}
+.strip a:hover{color:var(--ink);border-color:var(--muted)}
+.strip a[aria-current="page"]{background:var(--accent);color:var(--accent-ink)}
+.strip a .n{opacity:.7}
+.strip a .dot{display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:currentColor;margin-left:6px;vertical-align:middle}
+
+/* --- archive of editions --- */
+.editions{margin:44px 0 0}
+.editions > h2{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 4px;font-weight:500}
+.editions .window{font-size:14px;color:var(--muted);margin:0 0 8px}
+.ed{border-top:1px solid var(--line);padding:24px 0;display:grid;
+  grid-template-columns:minmax(0,1fr);gap:8px 24px}
+@media (min-width:640px){.ed{grid-template-columns:150px minmax(0,1fr)}}
+.ed .when{font-family:var(--mono);font-size:13px;color:var(--muted);
+  font-variant-numeric:tabular-nums;line-height:1.5}
+.ed .when a{color:inherit;text-decoration:none}
+.ed .when a:hover{color:var(--accent)}
+.ed .when small{display:block;font-size:11px;letter-spacing:.06em;
+  text-transform:uppercase}
+.ed h3{font-family:var(--display);font-weight:700;font-size:20px;
+  line-height:1.15;letter-spacing:-.012em;margin:0 0 6px;text-wrap:balance}
+.ed h3 a{color:inherit;text-decoration:none}
+.ed h3 a:hover{color:var(--accent)}
+.ed .notes{margin:0 0 10px;font-size:15px;color:var(--muted)}
+.ed ul{margin:0 0 12px;padding-left:18px;font-family:var(--display);
+  font-size:14.5px;line-height:1.45}
+.ed li{margin:0 0 4px}
+.ed li a{color:var(--ink);text-decoration:none}
+.ed li a:hover{color:var(--accent)}
+.ed li .v{color:var(--muted)}
+.ed audio{width:100%;height:36px;display:block;margin:4px 0 0}
+.ed .noaudio{font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+  color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav"><a class="brand" href="/">The Rundown <span>&#183; rundown.quontiant.co.uk</span></a><span class="spacer"></span><a class="link" href="/">Latest</a><a class="link" href="/#editions">Editions</a><a class="link" href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml" target="_blank" rel="noopener">Podcast feed</a></nav>
+<div class="strip" aria-label="Editions"><a href="/2026-09-06/" title="Sun 06 Sep 2026: 3 briefs, audio">09-06<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-09-03/" aria-current="page" title="Thu 03 Sep 2026: 3 briefs">09-03<span class="n"> &#183; 3</span></a><a href="/2026-09-02/" title="Wed 02 Sep 2026: 3 briefs, audio">09-02<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-08-31/" title="Mon 31 Aug 2026: 3 briefs, audio">08-31<span class="n"> &#183; 3</span><span class="dot" aria-label="audio"></span></a><a href="/2026-08-30/" title="Sun 30 Aug 2026: 14 briefs, audio">08-30<span class="n"> &#183; 14</span><span class="dot" aria-label="audio"></span></a></div>
+<header class="mast">
+  <p class="kicker">Long-form, read so you don&#8217;t have to</p>
+  <h1>The Rundown</h1>
+  <p class="edition">Thu 03 Sep 2026 &#183; 3 briefs</p>
+  <div class="listen"><h2>Listen</h2><p class="none">No audio edition for this date. The podcast feed is at <a href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml" target="_blank" rel="noopener">https://daneisluno-netizen.github.io/rundown-feed/feed.xml</a>.</p></div>
+</header>
+<div class="controls">
+  <button id="all" aria-pressed="true">All</button><button data-lane="self" aria-pressed="false">self</button><button data-lane="work" aria-pressed="false">work</button>
+  <span class="spacer"></span>
+  <button id="expand">Expand all</button>
+</div>
+<main><article class="brief " data-lane="self" id="2026-09-03-modern-wisdom-sinclair-fasting-clip">
+<div class="meta"><span class="chip lane">self</span><a class="chip" href="https://www.youtube.com/watch?v=8Rwzl9Fjhd8" target="_blank" rel="noopener">source &#8599;</a></div>
+<h3>Untitled</h3>
+<p class="verdict">Coverage caveat first: this is a short promotional clip of a longer podcast episode, not the full episode</p>
+<details open>
+<summary>VERDICT: skip it (self lane, low signal, no independent data — see caveat below)</summary>
+<div class="body">
+<p>Chris Williamson / Modern Wisdom (Dr David Sinclair clip) · self lane · 8m25s video → ~2m read | uploaded 19 Aug 2026
+https://www.youtube.com/watch?v=8Rwzl9Fjhd8</p>
+<p>— the video itself ends with &quot;if you enjoyed that clip, you will love the full-length episode.&quot; Everything below is scoped to what's in this clip only.</p>
+<h3>TOPICS COVERED</h3>
+<ul>
+<li>Self-experiment — Sinclair reports going up to 2 weeks without food (water, tea, celery), monitoring via CGM, smart scale (Withings) and blood tests; says the practice hasn't changed since his 2019 book <em>Lifespan</em>.</li>
+<li>! Mechanism claim — attributes post-3-day benefits to chaperone-mediated autophagy (CMA), a real, named cellular process. Confirmed in animal studies; <strong>human evidence for CMA activation specifically from 3-day fasting is still emerging</strong>, not established.</li>
+<li>Not for everyone — Sinclair explicitly says this isn't for the underweight or elderly, and that he supplements deliberately (vitamin B, C, minerals) to avoid deficiency during extended fasts.</li>
+<li>Muscle loss — acknowledges strength training more during fasts specifically to offset lean-mass loss, tracked via body-composition scale.</li>
+<li>Format note — this clip is built around an AG1 sponsorship read partway through; roughly a third of the runtime is the ad.</li>
+</ul>
+<h3>WORTH YOUR TIME IF: you're already fasting-curious and want a two-minute reminder that CMA is a real mechanism, not just marketing language.</h3>
+<h3>SKIP IF: you want an evidence-based case for multi-day fasting — this clip doesn't make one; it's an anecdote from someone who's also selling AG1.</h3>
+<h3>BOTTOM LINE</h3>
+<p>Sinclair names a real biological process (CMA) but extrapolates from animal data to describe his own human experience without saying so. The clip format means there's no independent pushback or follow-up question visible — Chris Williamson asks good clarifying questions (&quot;is that not a concern for your gut?&quot;) but the clip cuts before any real scrutiny lands. Matches the standing self-lane rule against &quot;guests with a book and no evidence base&quot; — Sinclair does have research standing (Harvard geneticist), but this particular claim isn't backed by human data yet.</p>
+<h3>WHAT IT ACTUALLY SAYS</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0:00–2:00</td>
+<td>Sinclair reasserts his fasting practice is unchanged since 2019; describes eating one meal a day, occasional 2-week fasts</td>
+</tr>
+<tr>
+<td>2:00–4:00</td>
+<td>Monitoring tools: CGM, Withings scale, blood tests; acknowledges this level of monitoring &quot;not anybody can do&quot;</td>
+</tr>
+<tr>
+<td>4:00–6:00</td>
+<td>Names CMA as the mechanism kicking in after day 3; describes ketone metabolism</td>
+</tr>
+<tr>
+<td>6:00–7:00</td>
+<td>Gut/stool changes during extended fasting; muscle-loss mitigation via exercise</td>
+</tr>
+<tr>
+<td>7:00–8:25</td>
+<td>AG1 sponsor read</td>
+</tr>
+</tbody>
+</table></div>
+<h3>VERIFICATION</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Verdict</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chaperone-mediated autophagy (CMA) is a real, named cellular quality-control process activated during prolonged fasting</td>
+<td>Confirmed (mechanism exists)</td>
+<td><a href="https://www.nature.com/articles/cr2013153">Chaperone-mediated autophagy — Nature Cell Research review</a>; <a href="https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2024.1509400/full">Frontiers in Aging, 2024</a></td>
+</tr>
+<tr>
+<td>CMA specifically activates/sustains around day 3 of fasting <strong>in humans</strong></td>
+<td>Unconfirmed — extrapolated from animal data</td>
+<td>Rodent studies show CMA sustained up to 3 days; a human RCT on 3-day water-only fasting and autophagy exists but results on CMA specifically are described as still emerging (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11677747/">PMC11677747</a>)</td>
+</tr>
+</tbody>
+</table></div>
+<h3>WHAT IT LEFT OUT OR GOT WRONG</h3>
+<p>The clip presents the day-3 CMA claim as settled personal physiology (&quot;we know molecularly...&quot;) without flagging that the human evidence for this specific timeline is still emerging — the underlying research is real, but the certainty in his delivery outruns it. No independent voice checks this in the clip itself.</p>
+<h3>FOR YOU</h3>
+<p>Nothing actionable — this is an anecdote from a promotional clip, not a protocol with evidence behind the specific timeline claimed. If genuinely interested in fasting/autophagy, the RCT cited above (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11677747/">PMC11677747</a>) is the closer-to-primary source, not this clip.</p>
+<h3>COVERAGE AND CONFIDENCE</h3>
+<p>Read: full auto-caption transcript (1,757 words), no chapters published (evidence_kind was description_fallback). <strong>Did not read or watch the full-length episode this clip is drawn from</strong> — only this standalone clip video was fetched, per its own runtime (505s) and the wpm guard passing clean. Confidence: 0.7 that the CMA mechanism is real; 0.4 that the specific &quot;kicks in after day 3&quot; human timeline is established rather than extrapolated.</p>
+<hr />
+<p>WATCH / LISTEN / READ ONLINE
+Video: https://www.youtube.com/watch?v=8Rwzl9Fjhd8
+Page: https://claude.ai/code/artifact/8a28abf3-58ce-4ae2-900d-8076912172ee
+Podcast: https://daneisluno-netizen.github.io/rundown-feed/feed.xml</p>
+</div>
+</details>
+</article><article class="brief " data-lane="work" id="2026-09-03-t-minus365-ai-rollout-4-stage-framework">
+<div class="meta"><span class="chip lane">work</span><a class="chip" href="https://www.youtube.com/watch?v=mfwrNvBHNNc" target="_blank" rel="noopener">source &#8599;</a></div>
+<h3>Untitled</h3>
+
+<details open>
+<summary>VERDICT: watch it</summary>
+<div class="body">
+<p>T-Minus365 (Nick) · work lane · 35m53s video → ~6m read | uploaded 23 Aug 2026
+https://www.youtube.com/watch?v=mfwrNvBHNNc</p>
+<h3>TOPICS COVERED</h3>
+<ul>
+<li>Framework — names a 4-stage AI rollout sequence: <strong>Land → Ground → Build → Connect</strong>, each stage with a stated business outcome, security posture and what to measure.</li>
+<li>! Failure stat — cites &quot;the MIT study&quot; for ~95% of businesses failing to show AI ROI. Confirmed real (MIT NANDA, Jul 2025), but the video omits the study's sharpest finding: internally built tools fail ~95%, externally sourced tools succeed 67% of the time.</li>
+<li>Land stage — get individuals productive inside a governed AI lane (corporate-email SaaS accounts, not personal Claude/GPT logins) before connecting any data; targets shadow-AI use directly.</li>
+<li>Ground stage — connect trusted data sources (M365 native for Copilot; a documented flow to connect Claude to M365 read-only or write) and stand up simple FAQ-only agents (e.g. an HR benefits bot).</li>
+<li>Build stage — department-level automation with named agents scoped to one task each (&quot;less is better&quot; — multiple narrow agents over one chained agent), human-in-the-loop optional per agent.</li>
+<li>Connect stage — cross-department workflows, agent fleet management, insider-risk policies (Purview), enterprise cost reporting across licence + usage-based billing.</li>
+<li>Governance thread — DLP in simulation mode first, sensitivity labels, oversharing remediation in SharePoint — introduced incrementally per stage rather than upfront lockdown.</li>
+<li>Cost warning — flags usage/credit-based AI billing (cites Cohere as an example) as the mechanism that turns a $200/mo plan into an unexplained six-figure bill with no ROI story.</li>
+</ul>
+<h3>WORTH YOUR TIME IF: you want a named staged-rollout structure to pitch AI adoption to a client instead of ad hoc tool deployment.</h3>
+<h3>SKIP IF: you already have an AI governance framework you're using — this doesn't add a new mechanism, it names and sequences ones you likely already do.</h3>
+<h3>BOTTOM LINE</h3>
+<p>This is Nick's own consulting framework, not an independent standard, and it is presented that way (school-community upsell at the end). The sequencing logic is sound and matches how MSPs already stage cloud rollouts — land users first, connect trusted data second, automate third, integrate last — but nothing here is dated, regulatory, or something Dane would be wrong to have missed if he'd skipped it. The value is a naming/pitch structure, not a fact.</p>
+<h3>WHAT IT ACTUALLY SAYS</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0:00–6:00</td>
+<td>Four reasons AI rollouts fail: no starting point, shiny-object big-bang projects, security-as-blocker creating shadow AI, no measurable ROI</td>
+</tr>
+<tr>
+<td>6:00–7:00</td>
+<td>Sponsor break — his own tool, CloudCapsule</td>
+</tr>
+<tr>
+<td>7:00–9:00</td>
+<td>Introduces the Land/Ground/Build/Connect framework</td>
+</tr>
+<tr>
+<td>9:00–15:00</td>
+<td>Stage 1 Land — governed AI lane, shadow-AI discovery, personal productivity workshops</td>
+</tr>
+<tr>
+<td>15:00–23:00</td>
+<td>Stage 2 Ground — connect M365/CRM data, basic FAQ agents, DLP simulation mode</td>
+</tr>
+<tr>
+<td>23:00–29:00</td>
+<td>Stage 3 Build — department automation, agent scoping best practice, least-privilege access</td>
+</tr>
+<tr>
+<td>29:00–35:00</td>
+<td>Stage 4 Connect — cross-department workflows, agent fleet governance, enterprise cost reporting</td>
+</tr>
+</tbody>
+</table></div>
+<h3>VERIFICATION</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Verdict</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>~95% of enterprise AI pilots show no measurable ROI</td>
+<td>Confirmed, but incomplete</td>
+<td><a href="https://www.healthcareitnews.com/news/mit-95-enterprise-ai-pilots-fail-deliver-measurable-roi">MIT Project NANDA, &quot;The GenAI Divide,&quot; Jul 2025</a> — the video states the top-line number but not the internal-build-vs-vendor-tool split</td>
+</tr>
+<tr>
+<td>Copilot Chat defaults to read-only, &quot;Copilot co-work&quot; gets write access</td>
+<td>Unverifiable as stated</td>
+<td>No Microsoft Learn page matches the term &quot;Copilot co-work&quot; — this is either a caption mis-transcription of a real feature name or a colloquial term Nick uses. Do not repeat this term without checking the current Learn agent-permissions page first</td>
+</tr>
+</tbody>
+</table></div>
+<h3>WHAT IT LEFT OUT OR GOT WRONG</h3>
+<p>Left out the MIT study's actual headline finding — that externally-sourced AI tools succeed at more than 2x the rate of internally built ones. That's directly relevant to an MSP audience deciding whether to build custom agents (his Build/Connect stages) versus buying — and it cuts against his own stages 3–4 pitch, which is presumably why it's omitted.</p>
+<h3>QUONTIANT ANGLE</h3>
+<p>Not a Learn-verifiable control, so no check candidate. The framework itself — named stages with a governance checklist per stage — is a positioning/pitch asset, not something Graph-queryable. Commodity risk: any competent MSP consultant already sequences rollouts this way; the value here is the name, not the mechanism.</p>
+<h3>FOR YOU</h3>
+<p>Nothing to act on directly. If useful at all, it's as a naming device for client conversations, not a technical change.</p>
+<h3>COVERAGE AND CONFIDENCE</h3>
+<p>Read: full auto-caption transcript (7,330 words, all 8 chapters), description, chapter list. Did not read: on-screen slides/diagrams referenced (&quot;depicted this in more of a diagram here&quot;) — this is a talking-head-plus-slides video and no <code>screenread.py</code> pass was run since nothing in the transcript hinges on an unreadable portal screen. Auto-captions throughout — &quot;Cloud&quot; almost certainly means &quot;Claude&quot; mis-transcribed in several places; read accordingly. Confidence: 0.75 that this framework is accurately summarized; 0.5 on the &quot;Copilot co-work&quot; terminology specifically.</p>
+<hr />
+<p>WATCH / LISTEN / READ ONLINE
+Video: https://www.youtube.com/watch?v=mfwrNvBHNNc
+Page: https://claude.ai/code/artifact/8a28abf3-58ce-4ae2-900d-8076912172ee
+Podcast: https://daneisluno-netizen.github.io/rundown-feed/feed.xml</p>
+</div>
+</details>
+</article><article class="brief " data-lane="work" id="2026-09-03-t-minus365-copilot-frontier-early-access">
+<div class="meta"><span class="chip lane">work</span><a class="chip" href="https://www.youtube.com/watch?v=OoqeMllPjQk" target="_blank" rel="noopener">source &#8599;</a></div>
+<h3>Untitled</h3>
+
+<details open>
+<summary>VERDICT: watch it (7 minutes, direct admin how-to)</summary>
+<div class="body">
+<p>T-Minus365 (Nick) · work lane · 7m5s video → ~3m read | uploaded 9 Aug 2026
+https://www.youtube.com/watch?v=OoqeMllPjQk</p>
+<h3>TOPICS COVERED</h3>
+<ul>
+<li>Feature — <strong>Microsoft Frontier</strong> is Microsoft's real, named early-access program for pre-GA Microsoft 365 Copilot features. Confirmed against Microsoft Learn, not just the video's word.</li>
+<li>Control — managed at tenant level in <code>admin.cloud.microsoft</code> → Copilot → Settings → Frontier; scopeable to all users, specific users, or groups (e.g. an MSP's own pilot/champion group).</li>
+<li>! Admin role gap — video says Global Admin or &quot;AI admin&quot; can enable it. Learn's actual list is <strong>AI Admin, Security Admin, or Office Apps Admin</strong> — the video didn't mention Security Admin or Office Apps Admin as valid least-privilege options.</li>
+<li>Prerequisite — requires an active Copilot licence (or the sub-300-seat Business add-on); not available on base M365 plans.</li>
+<li>Propagation delay — after enabling, the admin panel updates in ~5 minutes but users may not actually see new features for up to 24 hours — worth knowing before troubleshooting a &quot;why isn't it there&quot; ticket.</li>
+<li>Gotcha — under Copilot → Agents → Settings, &quot;Allow apps and agents built by Microsoft&quot; must also be ticked, or Frontier-released agents (his example: Copilot &quot;co-work&quot;) won't appear even with Frontier on.</li>
+<li>Agent-level control — individual agents can be further restricted to specific users/groups even after Frontier is enabled tenant-wide, for granular pilot scoping.</li>
+<li>Change-risk note — cites Copilot's &quot;co-work&quot; feature as an example of a Frontier feature whose UI and billing model both changed materially between preview and GA — a real caution for anyone documenting a pre-GA feature for a client.</li>
+</ul>
+<h3>WORTH YOUR TIME IF: you manage M365 tenants and want a pilot group testing Copilot features before end users ask about them.</h3>
+<h3>SKIP IF: you don't hold a Copilot licence in any managed tenant — the whole video is gated on that prerequisite.</h3>
+<h3>DO THIS: if you or a client tenant has Copilot licensed, enable Frontier scoped to a small pilot group (not &quot;all users&quot;) via admin.cloud.microsoft → Copilot → Settings → Frontier, and note the ~24h propagation delay before assuming it's broken.</h3>
+<h3>BOTTOM LINE</h3>
+<p>Straightforward, low-token admin walkthrough of a real Microsoft program. No hype, no unverifiable claims beyond one loosely-named feature (&quot;Copilot co-work&quot;) that reads like informal shorthand rather than a Learn-documented product name.</p>
+<h3>WHAT IT ACTUALLY SAYS</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0:00–1:00</td>
+<td>Framing: Frontier is Microsoft's early-access program, distinct from &quot;frontier model&quot; (Claude/GPT) terminology</td>
+</tr>
+<tr>
+<td>1:00–3:00</td>
+<td>Tenant-level control, release-channel comparison, GA deferral option, co-work example of what changed at GA</td>
+</tr>
+<tr>
+<td>3:00–4:00</td>
+<td>Prerequisites: Copilot licence, admin role (Global/AI Admin)</td>
+</tr>
+<tr>
+<td>4:00–6:00</td>
+<td>Walkthrough: admin.cloud.microsoft → Copilot Settings → Frontier toggle, scoping to users/groups, 24h propagation</td>
+</tr>
+<tr>
+<td>6:00–7:00</td>
+<td>Agent-level gating: &quot;Allow apps and agents built by Microsoft&quot; toggle, per-agent user/group access</td>
+</tr>
+</tbody>
+</table></div>
+<h3>VERIFICATION</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Verdict</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microsoft Frontier is a real tenant-level Copilot early-access program</td>
+<td>Confirmed</td>
+<td><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/get-started-frontier">Microsoft Learn — Get started with the Microsoft Copilot Frontier Program</a></td>
+</tr>
+<tr>
+<td>Roles that can enable Frontier</td>
+<td>Partially confirmed</td>
+<td>Learn lists <strong>AI Admin, Security Admin, or Office Apps Admin</strong> — video only names Global Admin and &quot;AI admin,&quot; omitting the other two least-privilege options</td>
+</tr>
+<tr>
+<td>&quot;Copilot co-work&quot; as a specific feature name</td>
+<td>Unverified</td>
+<td>Did not resolve on Learn under that exact name — treat as informal/possibly mis-captioned, same caveat as in the AI-rollout-framework brief from this source</td>
+</tr>
+</tbody>
+</table></div>
+<h3>WHAT IT LEFT OUT OR GOT WRONG</h3>
+<p>Didn't mention Security Admin or Office Apps Admin as valid roles for enabling Frontier — minor, but relevant for least-privilege delegation, which is exactly the kind of nuance an MSP audience would want.</p>
+<h3>QUONTIANT ANGLE</h3>
+<p>Real candidate: <strong>&quot;Copilot Frontier program enabled tenant-wide (not scoped to a pilot group)&quot;</strong> — a genuine unmanaged-preview-feature-exposure risk (untested features reaching all users). Verifiable against Learn's Frontier settings documentation; queryable read-only via Graph if the setting is exposed via <code>copilotSettings</code> or tenant admin API (needs checking against Learn's actual permissions table before building — not confirmed here). Not something CIPP/Syncro currently check for, since Frontier is new. Logged to <code>check-candidates.md</code>.</p>
+<h3>FOR YOU</h3>
+<p>If you're piloting Copilot features for Quontiant or a client, scope Frontier to a small group rather than all users, and check the &quot;Allow apps and agents built by Microsoft&quot; toggle if a promised feature doesn't show up.</p>
+<h3>COVERAGE AND CONFIDENCE</h3>
+<p>Read: full auto-caption transcript (1,537 words, all 7 chapters), description. No screens fetched — the walkthrough is narrated clearly enough that the settings path (admin.cloud.microsoft → Copilot → Settings → Frontier) is unambiguous from words alone, but the exact toggle labels were not visually confirmed via <code>screenread.py</code> this run. Confidence: 0.8 on the Frontier program facts (Learn-backed), 0.4 on &quot;Copilot co-work&quot; as a real product name.</p>
+<hr />
+<p>WATCH / LISTEN / READ ONLINE
+Video: https://www.youtube.com/watch?v=OoqeMllPjQk
+Page: https://claude.ai/code/artifact/8a28abf3-58ce-4ae2-900d-8076912172ee
+Podcast: https://daneisluno-netizen.github.io/rundown-feed/feed.xml</p>
+</div>
+</details>
+</article></main>
+<section class="editions"><h2>Editions</h2><p class="window"><a href="/#editions">All editions from the last 60 days</a>, with audio.</p></section><footer>Generated from the delivered briefs in the vault. Nothing here is rewritten. <a href="https://daneisluno-netizen.github.io/rundown-feed/feed.xml">Podcast feed</a></footer>
+</div>
+<script>
+(function () {
+  var main = document.querySelector('main');
+  var filters = Array.prototype.slice.call(
+    document.querySelectorAll('.controls button[data-lane], #all'));
+
+  function apply(lane) {
+    main.querySelectorAll('.brief').forEach(function (b) {
+      b.hidden = !(lane === 'all' || b.dataset.lane === lane);
+    });
+    filters.forEach(function (b) {
+      b.setAttribute('aria-pressed',
+        String((b.id === 'all' ? 'all' : b.dataset.lane) === lane));
+    });
+    try { localStorage.setItem('rundown.lane', lane); } catch (e) {}
+  }
+
+  filters.forEach(function (b) {
+    b.addEventListener('click', function () {
+      apply(b.id === 'all' ? 'all' : b.dataset.lane);
+    });
+  });
+
+  var saved = 'all';
+  try { saved = localStorage.getItem('rundown.lane') || 'all'; } catch (e) {}
+  if (saved !== 'all' && !document.querySelector('.controls [data-lane="' + saved + '"]')) {
+    saved = 'all';
+  }
+  apply(saved);
+
+  var toggle = document.getElementById('expand');
+  toggle.addEventListener('click', function () {
+    var open = toggle.textContent.trim() === 'Expand all';
+    document.querySelectorAll('main details').forEach(function (d) { d.open = open; });
+    toggle.textContent = open ? 'Collapse all' : 'Expand all';
+  });
+})();
+
+(function () {
+  // One thing playing at a time. Every edition on the archive has its own
+  // player, and two of them at once is noise.
+  var players = document.querySelectorAll('audio');
+  players.forEach(function (a) {
+    a.addEventListener('play', function () {
+      players.forEach(function (b) { if (b !== a && !b.paused) b.pause(); });
+    });
+  });
+})();
+</script>
+</body>
+</html>

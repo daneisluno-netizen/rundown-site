@@ -1,0 +1,204 @@
+{
+ "site": "https://rundown.quontiant.co.uk",
+ "built": "2026-09-06",
+ "window_days": 60,
+ "feed": "https://daneisluno-netizen.github.io/rundown-feed/feed.xml",
+ "editions": [
+  {
+   "date": "2026-09-06",
+   "url": "https://rundown.quontiant.co.uk/2026-09-06/",
+   "audio": "https://rundown.quontiant.co.uk/audio/2026-09-06-rundown.mp3",
+   "title": "The Rundown - Sat 6 Sep: SSPR dates, prompt injection slip, Blue Zones",
+   "briefs": [
+    {
+     "slug": "2026-09-06-jonathan-edwards-sspr-registered-methods",
+     "title": "Your SSPR Is About To Stop Working \u2014 Jonathan Edwards",
+     "lane": "",
+     "verdict": "WATCH IT."
+    },
+    {
+     "slug": "2026-09-06-modern-wisdom-lieberman-blue-zones-scam",
+     "title": "The Biggest Nutrition Scam \"Experts\" Are Pushing \u2014 Chris Williamson w/ Daniel Lieberman",
+     "lane": "",
+     "verdict": "WATCH IT"
+    },
+    {
+     "slug": "2026-09-06-t-minus365-july-updates-roundup",
+     "title": "What's New in Microsoft 365 | July Updates \u2014 T-Minus365",
+     "lane": "",
+     "verdict": "SKIM IT."
+    }
+   ]
+  },
+  {
+   "date": "2026-09-03",
+   "url": "https://rundown.quontiant.co.uk/2026-09-03/",
+   "audio": null,
+   "title": "",
+   "briefs": [
+    {
+     "slug": "2026-09-03-modern-wisdom-sinclair-fasting-clip",
+     "title": "Untitled",
+     "lane": "self",
+     "verdict": "Coverage caveat first: this is a short promotional clip of a longer podcast episode, not the full episode"
+    },
+    {
+     "slug": "2026-09-03-t-minus365-ai-rollout-4-stage-framework",
+     "title": "Untitled",
+     "lane": "work",
+     "verdict": ""
+    },
+    {
+     "slug": "2026-09-03-t-minus365-copilot-frontier-early-access",
+     "title": "Untitled",
+     "lane": "work",
+     "verdict": ""
+    }
+   ]
+  },
+  {
+   "date": "2026-09-02",
+   "url": "https://rundown.quontiant.co.uk/2026-09-02/",
+   "audio": "https://rundown.quontiant.co.uk/audio/2026-09-02-rundown.mp3",
+   "title": "The Rundown - 02 Sep: Conditional Access, MSP evidence, Claude ladder",
+   "briefs": [
+    {
+     "slug": "2026-09-02-dan-martell-claude-beginner-to-pro",
+     "title": "1000+ Hours of Learning Claude in 15 Minutes \u2014 Dan Martell",
+     "lane": "self",
+     "verdict": "Watch it."
+    },
+    {
+     "slug": "2026-09-02-jonathan-edwards-conditional-access-trusted-locations",
+     "title": "Stop Trusting Your Office IP Address for MFA \u2014 Jonathan Edwards",
+     "lane": "work",
+     "verdict": "Watch it."
+    },
+    {
+     "slug": "2026-09-02-jonathan-edwards-msp-differentiation-evidence",
+     "title": "Why You're Losing Deals to Cheaper MSPs \u2014 Jonathan Edwards",
+     "lane": "work",
+     "verdict": "Watch it."
+    }
+   ]
+  },
+  {
+   "date": "2026-08-31",
+   "url": "https://rundown.quontiant.co.uk/2026-08-31/",
+   "audio": "https://rundown.quontiant.co.uk/audio/2026-08-31-rundown.mp3",
+   "title": "The Rundown - Monday: SharePoint sharing, one real payment, the father brain",
+   "briefs": [
+    {
+     "slug": "2026-08-31-dan-martell-one-person-ai-business",
+     "title": "How to start a 1-person business with AI (Dan Martell)",
+     "lane": "self",
+     "verdict": "Watch it \u2014 04:00 to 15:00, at 1.5x."
+    },
+    {
+     "slug": "2026-08-31-doac-darby-saxbe-father-brain",
+     "title": "Dr Darby Saxbe on the father's brain (Diary Of A CEO)",
+     "lane": "self",
+     "verdict": "Watch 01:08:00\u201301:16:00. That is the eight minutes with the advice in it."
+    },
+    {
+     "slug": "2026-08-31-t-minus365-m365-august-updates",
+     "title": "What's New in Microsoft 365 \u2014 August 2026 (T-Minus365)",
+     "lane": "work",
+     "verdict": "Watch 06:00\u201308:00 and 08:00\u201311:00. Skip the rest."
+    }
+   ]
+  },
+  {
+   "date": "2026-08-30",
+   "url": "https://rundown.quontiant.co.uk/2026-08-30/",
+   "audio": "https://rundown.quontiant.co.uk/audio/2026-08-30-rundown.mp3",
+   "title": "The Rundown - Sun 30 Aug: memberOf deadline, who pays for your tokens",
+   "briefs": [
+    {
+     "slug": "2026-08-30-diary-of-a-ceo-alex-hormozi-ai-business",
+     "title": "Alex Hormozi's Warning: Stop Chasing AI, Build This Instead!",
+     "lane": "",
+     "verdict": "Source:"
+    },
+    {
+     "slug": "2026-08-30-diary-of-a-ceo-fathers-brains",
+     "title": "The Scientist Who Scans Fathers' Brains \u2014 Dr Darby Saxby (The Diary Of A CEO)",
+     "lane": "self",
+     "verdict": ""
+    },
+    {
+     "slug": "2026-08-30-diary-of-a-ceo-seth-godin-quitting-perfectionism",
+     "title": "The Quitting Expert: Quit NOW Before AI Makes The Choice For You \u2014 Seth Godin (Diary Of A CEO)",
+     "lane": "self",
+     "verdict": "Watch it."
+    },
+    {
+     "slug": "2026-08-30-doac-ed-zitron-ai-bubble",
+     "title": "The Man Who Calls BS On AI \u2014 Ed Zitron",
+     "lane": "self",
+     "verdict": "Verdict: don't watch 2h27m of it."
+    },
+    {
+     "slug": "2026-08-30-fb-reel-five-steps-service-business",
+     "title": "The Five Simplest Paths To Making Money (14s reel)",
+     "lane": "",
+     "verdict": "Source:"
+    },
+    {
+     "slug": "2026-08-30-jonathan-edwards-copilot-sharepoint-governance",
+     "title": "Copilot Exposes M365 Governance Gaps \u2014 ShareGate Protect Fixes Them (Jonathan Edwards)",
+     "lane": "work",
+     "verdict": "Watch the first 3 minutes for the problem, treat the rest as a vendor demo."
+    },
+    {
+     "slug": "2026-08-30-jonathan-edwards-defender-intune-migration",
+     "title": "99% of IT Teams STILL Get Microsoft Defender + Intune Wrong",
+     "lane": "work",
+     "verdict": "Verdict: skip it."
+    },
+    {
+     "slug": "2026-08-30-jonathan-edwards-device-code-phishing",
+     "title": "Your MFA Won't Stop This. Here's What Will",
+     "lane": "work",
+     "verdict": "Verdict: don't watch it \u2014 but do the thing it says, with one correction that matters."
+    },
+    {
+     "slug": "2026-08-30-jonathan-edwards-entra-memberof-retirement",
+     "title": "Your Entra Dynamic Groups Break in November (Silently)",
+     "lane": "work",
+     "verdict": "Verdict: don't watch it, but act on it this week."
+    },
+    {
+     "slug": "2026-08-30-jonathan-edwards-sms-mfa-retirement",
+     "title": "Microsoft Is Killing SMS MFA \u2014 Your 2027 Deadline (Jonathan Edwards)",
+     "lane": "work",
+     "verdict": "Watch it."
+    },
+    {
+     "slug": "2026-08-30-modern-wisdom-hugging-face-ai-attack",
+     "title": "The Hugging Face AI Attack Should Terrify Us (Modern Wisdom clip)",
+     "lane": "self",
+     "verdict": "Watch it, but distrust the framing in the title and description."
+    },
+    {
+     "slug": "2026-08-30-t-minus365-claude-sso-entra",
+     "title": "How to Set Up Claude SSO with Microsoft 365 (10-Minute Walkthrough)",
+     "lane": "",
+     "verdict": "Source:"
+    },
+    {
+     "slug": "2026-08-30-t-minus365-copilot-cowork-review",
+     "title": "I Replaced Claude With Microsoft Cowork for a Month",
+     "lane": "",
+     "verdict": "Source:"
+    },
+    {
+     "slug": "2026-08-30-t-minus365-sharepoint-sprawl-cleanup",
+     "title": "How I Clean Up Years of SharePoint Sprawl (T-Minus365)",
+     "lane": "work",
+     "verdict": "Watch it."
+    }
+   ]
+  }
+ ]
+}
