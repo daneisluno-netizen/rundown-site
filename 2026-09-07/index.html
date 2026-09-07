@@ -801,7 +801,7 @@ footer{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line);
 <details open>
 <summary>Quontiant angle</summary>
 <div class="body">
-<p><strong>Not commodity — CIPP and Syncro's M365-audit layers report on whether DLP policies exist, not whether they're tuned or scoped sensibly.</strong> A check that flags &quot;DLP policy in report-only/simulation mode for &gt;30 days&quot; or &quot;DLP policy has zero exclusions on a &gt;90 min-old high-severity rule&quot; would be a genuine gap-filler. Candidate logged in <code>check-candidates.md</code> — needs the exact Graph/Purview API read scope confirmed against Learn before it goes further, not from this video's script.</p>
+<p><strong>Already built, not a gap.</strong> Checked the live catalogue (<code>claims-index.mjs --compact DATA</code>) before logging anything: <code>DLP-POLICY-001</code> already audits exactly this — policy existence, enforcement mode (test vs enabled), and workload coverage across Exchange/SharePoint/OneDrive/Teams. No candidate logged. The one thing this video suggests that isn't in that check's stated scope: whether a <em>high-severity</em> rule carries broad exclusions — worth a quick look at <code>DLP-POLICY-001</code>'s actual logic next time someone's in that file, but not something to queue from a video script alone.</p>
 </div>
 </details>
 <details open>
