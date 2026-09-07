@@ -1,9 +1,42 @@
 {
  "site": "https://rundown.quontiant.co.uk",
- "built": "2026-09-06",
+ "built": "2026-09-07",
  "window_days": 60,
  "feed": "https://daneisluno-netizen.github.io/rundown-feed/feed.xml",
  "editions": [
+  {
+   "date": "2026-09-07",
+   "url": "https://rundown.quontiant.co.uk/2026-09-07/",
+   "audio": "https://rundown.quontiant.co.uk/audio/2026-09-07-rundown.mp3",
+   "title": "The Rundown - Sun 7 Sep: DLP licensing gap, Obsidian brain, calendar prompts",
+   "clips": [],
+   "briefs": [
+    {
+     "slug": "2026-09-07-dan-martell-ai-calendar-audit",
+     "title": "These 11 Minutes Will Save You +1,000 Hours in 2026 \u2014 Dan Martell",
+     "lane": "self",
+     "verdict": "Watch it \u2014 11 minutes for three copy-pasteable prompts, skip the framing."
+    },
+    {
+     "slug": "2026-09-07-dan-martell-ai-qa-exploration-pick",
+     "title": "These AI Hacks Will Get You Ridiculously Ahead of Most People (Q&A) \u2014 Dan Martell",
+     "lane": "self",
+     "verdict": "EXPLORATION PICK \u2014 briefed in full despite scoring below the gate (4/7)."
+    },
+    {
+     "slug": "2026-09-07-dan-martell-ai-vault-identity-prompts",
+     "title": "This AI System Will Make You So Smart It's Almost Unfair \u2014 Dan Martell",
+     "lane": "self",
+     "verdict": "Watch it \u2014 but you've already built most of this."
+    },
+    {
+     "slug": "2026-09-07-t-minus365-purview-dlp-full-course",
+     "title": "Microsoft Data Loss Prevention Full Course \u2014 T-Minus365",
+     "lane": "work",
+     "verdict": "WATCH ONE SPECIFIC STRETCH."
+    }
+   ]
+  },
   {
    "date": "2026-09-06",
    "url": "https://rundown.quontiant.co.uk/2026-09-06/",

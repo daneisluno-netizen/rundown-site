@@ -1,11 +1,12 @@
 {
  "site": "https://rundown.quontiant.co.uk",
- "built": "2026-09-06",
+ "built": "2026-09-07",
  "window_days": 60,
  "summary": {
-  "claims": 116,
-  "briefs_with_table": 22,
+  "claims": 125,
+  "briefs_with_table": 25,
   "briefs_without_table": [
+   "2026-09-07-dan-martell-ai-calendar-audit",
    "2026-09-03-modern-wisdom-sinclair-fasting-clip",
    "2026-09-03-t-minus365-ai-rollout-4-stage-framework",
    "2026-09-03-t-minus365-copilot-frontier-early-access",
@@ -13,9 +14,9 @@
   ],
   "counts": {
    "contradicted": 6,
-   "partial": 17,
-   "unverified": 27,
-   "confirmed": 66,
+   "partial": 20,
+   "unverified": 28,
+   "confirmed": 71,
    "other": 0
   },
   "channels": [
@@ -105,6 +106,23 @@
     "held": 33
    },
    {
+    "key": "unknown",
+    "name": "Unknown",
+    "lane": "self",
+    "claims": 9,
+    "counts": {
+     "contradicted": 0,
+     "partial": 3,
+     "unverified": 1,
+     "confirmed": 5,
+     "other": 0
+    },
+    "briefs": 3,
+    "url": "",
+    "checked": 8,
+    "held": 62
+   },
+   {
     "key": "alex-hormozi",
     "name": "Alex Hormozi",
     "lane": "",
@@ -124,6 +142,224 @@
   ]
  },
  "claims": [
+  {
+   "id": "01adb4acec",
+   "date": "2026-09-07",
+   "brief": "2026-09-07-dan-martell-ai-qa-exploration-pick",
+   "brief_title": "These AI Hacks Will Get You Ridiculously Ahead of Most People (Q&A) — Dan Martell",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "self",
+   "video": "https://www.youtube.com/watch?v=1MMqPTiWfSc",
+   "claim": "ChatGPT Record & Replay is a real, current feature",
+   "claim_md": "ChatGPT Record & Replay is a real, current feature",
+   "verdict": "Confirmed, but not available in the UK",
+   "verdict_md": "Confirmed, but **not available in the UK**",
+   "class": "partial",
+   "checked_against": "AI Weekly, Digital Applied",
+   "source_md": "[AI Weekly](https://aiweekly.co/alerts/openai-adds-record-replay-to-codex-for-macos-business-users), [Digital Applied](https://www.digitalapplied.com/blog/openai-codex-record-replay-no-code-agent-skills-guide)",
+   "sources": [
+    {
+     "title": "AI Weekly",
+     "url": "https://aiweekly.co/alerts/openai-adds-record-replay-to-codex-for-macos-business-users"
+    },
+    {
+     "title": "Digital Applied",
+     "url": "https://www.digitalapplied.com/blog/openai-codex-record-replay-no-code-agent-skills-guide"
+    }
+   ]
+  },
+  {
+   "id": "a383043d3c",
+   "date": "2026-09-07",
+   "brief": "2026-09-07-dan-martell-ai-qa-exploration-pick",
+   "brief_title": "These AI Hacks Will Get You Ridiculously Ahead of Most People (Q&A) — Dan Martell",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "self",
+   "video": "https://www.youtube.com/watch?v=1MMqPTiWfSc",
+   "claim": "Claude has a built-in \"ask user\" tool",
+   "claim_md": "Claude has a built-in \"ask user\" tool",
+   "verdict": "Confirmed, but it's Claude Code specific, not general chat",
+   "verdict_md": "Confirmed, but it's Claude Code specific, not general chat",
+   "class": "partial",
+   "checked_against": "Claude Code docs",
+   "source_md": "[Claude Code docs](https://code.claude.com/docs/en/agent-sdk/user-input)",
+   "sources": [
+    {
+     "title": "Claude Code docs",
+     "url": "https://code.claude.com/docs/en/agent-sdk/user-input"
+    }
+   ]
+  },
+  {
+   "id": "ec75c11ca7",
+   "date": "2026-09-07",
+   "brief": "2026-09-07-dan-martell-ai-qa-exploration-pick",
+   "brief_title": "These AI Hacks Will Get You Ridiculously Ahead of Most People (Q&A) — Dan Martell",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "self",
+   "video": "https://www.youtube.com/watch?v=1MMqPTiWfSc",
+   "claim": "NotebookLM features as described (source chat, audio overview, quiz)",
+   "claim_md": "NotebookLM features as described (source chat, audio overview, quiz)",
+   "verdict": "Confirmed, matches Google's own description",
+   "verdict_md": "Confirmed, matches Google's own description",
+   "class": "confirmed",
+   "checked_against": "Consistent with known NotebookLM feature set",
+   "source_md": "Consistent with known NotebookLM feature set",
+   "sources": []
+  },
+  {
+   "id": "5aa638d229",
+   "date": "2026-09-07",
+   "brief": "2026-09-07-dan-martell-ai-vault-identity-prompts",
+   "brief_title": "This AI System Will Make You So Smart It's Almost Unfair — Dan Martell",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "self",
+   "video": "https://www.youtube.com/watch?v=b4d32pBa3UY",
+   "claim": "Claude has scheduled/recurring cloud tasks that can run a nightly cron-style job",
+   "claim_md": "Claude has scheduled/recurring cloud tasks that can run a nightly cron-style job",
+   "verdict": "Confirmed",
+   "verdict_md": "Confirmed",
+   "class": "confirmed",
+   "checked_against": "Claude Cowork scheduled tasks",
+   "source_md": "[Claude Cowork scheduled tasks](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork)",
+   "sources": [
+    {
+     "title": "Claude Cowork scheduled tasks",
+     "url": "https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork"
+    }
+   ]
+  },
+  {
+   "id": "f444b6fa61",
+   "date": "2026-09-07",
+   "brief": "2026-09-07-dan-martell-ai-vault-identity-prompts",
+   "brief_title": "This AI System Will Make You So Smart It's Almost Unfair — Dan Martell",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "self",
+   "video": "https://www.youtube.com/watch?v=b4d32pBa3UY",
+   "claim": "\"60% to 85% accuracy\" from folder structure",
+   "claim_md": "\"60% to 85% accuracy\" from folder structure",
+   "verdict": "Unverifiable",
+   "verdict_md": "Unverifiable",
+   "class": "unverified",
+   "checked_against": "Self-reported anecdote, no source given in video or description",
+   "source_md": "Self-reported anecdote, no source given in video or description",
+   "sources": []
+  },
+  {
+   "id": "aa844b1b0a",
+   "date": "2026-09-07",
+   "brief": "2026-09-07-t-minus365-purview-dlp-full-course",
+   "brief_title": "Microsoft Data Loss Prevention Full Course — T-Minus365",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "work",
+   "video": "https://www.youtube.com/watch?v=y2NTyY5wehY",
+   "claim": "Business Premium can add Purview Suite",
+   "claim_md": "Business Premium can add Purview Suite",
+   "verdict": "Contradicted (partially) — true today but via a different, capped SKU than the one he implies, since May 2026",
+   "verdict_md": "**Contradicted (partially)** — true today but via a *different, capped* SKU than the one he implies, since May 2026",
+   "class": "partial",
+   "checked_against": "Schneider IT, CIAOPS",
+   "source_md": "[Schneider IT](https://www.schneider.im/microsoft-365-e5-compliance-business-premium-no-longer-eligible-prerequisite/), [CIAOPS](https://blog.ciaops.com/2025/10/03/microsoft-purview-suite-for-business-premium-features-smb-use-cases/)",
+   "sources": [
+    {
+     "title": "Schneider IT",
+     "url": "https://www.schneider.im/microsoft-365-e5-compliance-business-premium-no-longer-eligible-prerequisite/"
+    },
+    {
+     "title": "CIAOPS",
+     "url": "https://blog.ciaops.com/2025/10/03/microsoft-purview-suite-for-business-premium-features-smb-use-cases/"
+    }
+   ]
+  },
+  {
+   "id": "1898cad82e",
+   "date": "2026-09-07",
+   "brief": "2026-09-07-t-minus365-purview-dlp-full-course",
+   "brief_title": "Microsoft Data Loss Prevention Full Course — T-Minus365",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "work",
+   "video": "https://www.youtube.com/watch?v=y2NTyY5wehY",
+   "claim": "Endpoint DLP needs Defender for Endpoint onboarding + E5/Purview add-on",
+   "claim_md": "Endpoint DLP needs Defender for Endpoint onboarding + E5/Purview add-on",
+   "verdict": "Confirmed",
+   "verdict_md": "Confirmed",
+   "class": "confirmed",
+   "checked_against": "Learn: device onboarding",
+   "source_md": "[Learn: device onboarding](https://learn.microsoft.com/en-us/purview/device-onboarding-overview)",
+   "sources": [
+    {
+     "title": "Learn: device onboarding",
+     "url": "https://learn.microsoft.com/en-us/purview/device-onboarding-overview"
+    }
+   ]
+  },
+  {
+   "id": "0a1f12ab18",
+   "date": "2026-09-07",
+   "brief": "2026-09-07-t-minus365-purview-dlp-full-course",
+   "brief_title": "Microsoft Data Loss Prevention Full Course — T-Minus365",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "work",
+   "video": "https://www.youtube.com/watch?v=y2NTyY5wehY",
+   "claim": "SPO/OneDrive \"block external domains/users\" just left preview",
+   "claim_md": "SPO/OneDrive \"block external domains/users\" just left preview",
+   "verdict": "Confirmed — public preview Apr 2026, GA rollout May-Jul 2026",
+   "verdict_md": "Confirmed — public preview Apr 2026, GA rollout May-Jul 2026",
+   "class": "confirmed",
+   "checked_against": "MC1338823, Learn",
+   "source_md": "[MC1338823](https://mc.merill.net/message/MC1338823), [Learn](https://learn.microsoft.com/en-us/purview/dlp-create-policy-spo-odb-external)",
+   "sources": [
+    {
+     "title": "MC1338823",
+     "url": "https://mc.merill.net/message/MC1338823"
+    },
+    {
+     "title": "Learn",
+     "url": "https://learn.microsoft.com/en-us/purview/dlp-create-policy-spo-odb-external"
+    }
+   ]
+  },
+  {
+   "id": "7b9c235cc1",
+   "date": "2026-09-07",
+   "brief": "2026-09-07-t-minus365-purview-dlp-full-course",
+   "brief_title": "Microsoft Data Loss Prevention Full Course — T-Minus365",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "work",
+   "video": "https://www.youtube.com/watch?v=y2NTyY5wehY",
+   "claim": "Copilot DLP: block-processing vs block-web-search are separate, exclusive actions",
+   "claim_md": "Copilot DLP: block-processing vs block-web-search are separate, exclusive actions",
+   "verdict": "Confirmed",
+   "verdict_md": "Confirmed",
+   "class": "confirmed",
+   "checked_against": "Learn: DLP for Copilot",
+   "source_md": "[Learn: DLP for Copilot](https://learn.microsoft.com/en-us/purview/dlp-microsoft365-copilot-location-learn-about)",
+   "sources": [
+    {
+     "title": "Learn: DLP for Copilot",
+     "url": "https://learn.microsoft.com/en-us/purview/dlp-microsoft365-copilot-location-learn-about"
+    }
+   ]
+  },
   {
    "id": "ded667f171",
    "date": "2026-09-06",
