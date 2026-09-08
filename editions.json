@@ -1,9 +1,47 @@
 {
  "site": "https://rundown.quontiant.co.uk",
- "built": "2026-09-07",
+ "built": "2026-09-08",
  "window_days": 60,
  "feed": "https://daneisluno-netizen.github.io/rundown-feed/feed.xml",
  "editions": [
+  {
+   "date": "2026-09-08",
+   "url": "https://rundown.quontiant.co.uk/2026-09-08/",
+   "audio": "https://rundown.quontiant.co.uk/audio/2026-09-08-rundown.mp3",
+   "title": "The Rundown - 8 Sep: ADHD, RSD, and the GAIN matrix",
+   "clips": [
+    {
+     "source": "",
+     "title": "Chris Williamson (Modern Wisdom) \u2014 Dr Sasha Hamdani on Rejection Sensitive Dysphoria",
+     "video": "https://www.youtube.com/watch?v=MB_5DKSmOls",
+     "start": "59:00",
+     "end": "60:30",
+     "link": "https://www.youtube.com/watch?v=MB_5DKSmOls&t=3540s"
+    },
+    {
+     "source": "",
+     "title": "Dan Martell \u2014 The GAIN Matrix for deciding what to hand to AI",
+     "video": "https://www.youtube.com/watch?v=ORgmqtNvYsA",
+     "start": "03:00",
+     "end": "04:00",
+     "link": "https://www.youtube.com/watch?v=ORgmqtNvYsA&t=180s"
+    }
+   ],
+   "briefs": [
+    {
+     "slug": "2026-09-08-chris-williamson-rejection-sensitive-dysphoria",
+     "title": "Chris Williamson (Modern Wisdom) \u2014 Dr Sasha Hamdani on Rejection Sensitive Dysphoria",
+     "lane": "",
+     "verdict": "VERDICT: Watch it."
+    },
+    {
+     "slug": "2026-09-08-dan-martell-gain-matrix-ai-framework",
+     "title": "Dan Martell \u2014 The GAIN Matrix for deciding what to hand to AI",
+     "lane": "",
+     "verdict": "VERDICT: Watch it (the framework), skip the self-promotion."
+    }
+   ]
+  },
   {
    "date": "2026-09-07",
    "url": "https://rundown.quontiant.co.uk/2026-09-07/",

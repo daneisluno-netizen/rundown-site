@@ -1,10 +1,10 @@
 {
  "site": "https://rundown.quontiant.co.uk",
- "built": "2026-09-07",
+ "built": "2026-09-08",
  "window_days": 60,
  "summary": {
-  "claims": 125,
-  "briefs_with_table": 25,
+  "claims": 131,
+  "briefs_with_table": 27,
   "briefs_without_table": [
    "2026-09-07-dan-martell-ai-calendar-audit",
    "2026-09-03-modern-wisdom-sinclair-fasting-clip",
@@ -13,10 +13,10 @@
    "2026-08-30-diary-of-a-ceo-alex-hormozi-ai-business"
   ],
   "counts": {
-   "contradicted": 6,
-   "partial": 20,
-   "unverified": 28,
-   "confirmed": 71,
+   "contradicted": 7,
+   "partial": 22,
+   "unverified": 30,
+   "confirmed": 72,
    "other": 0
   },
   "channels": [
@@ -72,6 +72,23 @@
     "held": 84
    },
    {
+    "key": "unknown",
+    "name": "Unknown",
+    "lane": "",
+    "claims": 15,
+    "counts": {
+     "contradicted": 1,
+     "partial": 5,
+     "unverified": 3,
+     "confirmed": 6,
+     "other": 0
+    },
+    "briefs": 5,
+    "url": "",
+    "checked": 12,
+    "held": 50
+   },
+   {
     "key": "dan-martell",
     "name": "Dan Martell",
     "lane": "self",
@@ -106,23 +123,6 @@
     "held": 33
    },
    {
-    "key": "unknown",
-    "name": "Unknown",
-    "lane": "self",
-    "claims": 9,
-    "counts": {
-     "contradicted": 0,
-     "partial": 3,
-     "unverified": 1,
-     "confirmed": 5,
-     "other": 0
-    },
-    "briefs": 3,
-    "url": "",
-    "checked": 8,
-    "held": 62
-   },
-   {
     "key": "alex-hormozi",
     "name": "Alex Hormozi",
     "lane": "",
@@ -142,6 +142,157 @@
   ]
  },
  "claims": [
+  {
+   "id": "eef35d9d02",
+   "date": "2026-09-08",
+   "brief": "2026-09-08-chris-williamson-rejection-sensitive-dysphoria",
+   "brief_title": "Chris Williamson (Modern Wisdom) — Dr Sasha Hamdani on Rejection Sensitive Dysphoria",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "",
+   "video": "https://www.youtube.com/watch?v=MB_5DKSmOls",
+   "claim": "RSD term coined by Dr William Dodson",
+   "claim_md": "RSD term coined by Dr William Dodson",
+   "verdict": "Confirmed",
+   "verdict_md": "Confirmed",
+   "class": "confirmed",
+   "checked_against": "Psychology Today, ADDitude",
+   "source_md": "[Psychology Today](https://www.psychologytoday.com/us/blog/if-i-be-waspish/202604/rejection-sensitivity-dysphoria-the-actual-research), [ADDitude](https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/)",
+   "sources": [
+    {
+     "title": "Psychology Today",
+     "url": "https://www.psychologytoday.com/us/blog/if-i-be-waspish/202604/rejection-sensitivity-dysphoria-the-actual-research"
+    },
+    {
+     "title": "ADDitude",
+     "url": "https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/"
+    }
+   ]
+  },
+  {
+   "id": "5b7f2aa527",
+   "date": "2026-09-08",
+   "brief": "2026-09-08-chris-williamson-rejection-sensitive-dysphoria",
+   "brief_title": "Chris Williamson (Modern Wisdom) — Dr Sasha Hamdani on Rejection Sensitive Dysphoria",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "",
+   "video": "https://www.youtube.com/watch?v=MB_5DKSmOls",
+   "claim": "Almost 100% of ADHD adults show some RSD",
+   "claim_md": "Almost 100% of ADHD adults show some RSD",
+   "verdict": "Broadly confirmed, with a caveat",
+   "verdict_md": "Broadly confirmed, with a caveat",
+   "class": "partial",
+   "checked_against": "Independent estimates cluster at 98–99%, but RSD has no DSM-5 recognition and no validated diagnostic criteria — it's a popularised clinical concept, not an established one. ResearchGate case series, Psychology Today",
+   "source_md": "Independent estimates cluster at 98–99%, but RSD has no DSM-5 recognition and no validated diagnostic criteria — it's a popularised clinical concept, not an established one. [ResearchGate case series](https://www.researchgate.net/publication/382531593), [Psychology Today](https://www.psychologytoday.com/us/blog/if-i-be-waspish/202604/rejection-sensitivity-dysphoria-the-actual-research)",
+   "sources": [
+    {
+     "title": "ResearchGate case series",
+     "url": "https://www.researchgate.net/publication/382531593"
+    },
+    {
+     "title": "Psychology Today",
+     "url": "https://www.psychologytoday.com/us/blog/if-i-be-waspish/202604/rejection-sensitivity-dysphoria-the-actual-research"
+    }
+   ]
+  },
+  {
+   "id": "250a957316",
+   "date": "2026-09-08",
+   "brief": "2026-09-08-chris-williamson-rejection-sensitive-dysphoria",
+   "brief_title": "Chris Williamson (Modern Wisdom) — Dr Sasha Hamdani on Rejection Sensitive Dysphoria",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "",
+   "video": "https://www.youtube.com/watch?v=MB_5DKSmOls",
+   "claim": "Over 90% of UK men who die by suicide have already had some form of mental health counselling",
+   "claim_md": "Over 90% of UK men who die by suicide have already had some form of mental health counselling",
+   "verdict": "Contradicted / overstated as stated",
+   "verdict_md": "Contradicted / overstated as stated",
+   "class": "contradicted",
+   "checked_against": "The closest UK data: ~27% of all suicide deaths involved contact with mental health services in the year before death, and three-quarters had none. A ~98% contact figure exists but only within the subgroup already under active mental health care — not the general suicide population she's describing. BJPsych Open, Wales cohort",
+   "source_md": "The closest UK data: ~27% of all suicide deaths involved contact with mental health services in the year before death, and three-quarters had none. A ~98% contact figure exists but only within the subgroup already under active mental health care — not the general suicide population she's describing. [BJPsych Open, Wales cohort](https://www.cambridge.org/core/journals/bjpsych-open/article/contacts-with-primary-and-secondary-healthcare-before-suicide-by-those-under-the-care-of-mental-health-services-casecontrol-wholepopulationbased-study-using-personlevel-linked-routine-data-in-wales-uk-during-20002015)",
+   "sources": [
+    {
+     "title": "BJPsych Open, Wales cohort",
+     "url": "https://www.cambridge.org/core/journals/bjpsych-open/article/contacts-with-primary-and-secondary-healthcare-before-suicide-by-those-under-the-care-of-mental-health-services-casecontrol-wholepopulationbased-study-using-personlevel-linked-routine-data-in-wales-uk-during-20002015"
+    }
+   ]
+  },
+  {
+   "id": "b68bb561a3",
+   "date": "2026-09-08",
+   "brief": "2026-09-08-chris-williamson-rejection-sensitive-dysphoria",
+   "brief_title": "Chris Williamson (Modern Wisdom) — Dr Sasha Hamdani on Rejection Sensitive Dysphoria",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "",
+   "video": "https://www.youtube.com/watch?v=MB_5DKSmOls",
+   "claim": "New mothers lose ~2.5% grey matter volume",
+   "claim_md": "New mothers lose ~2.5% grey matter volume",
+   "verdict": "Understated",
+   "verdict_md": "Understated",
+   "class": "partial",
+   "checked_against": "Hoekzema et al. (2016, Nature Neuroscience) found reductions of up to ~4.9%, across ~94% of measured brain regions. Leiden University summary, PubMed",
+   "source_md": "Hoekzema et al. (2016, Nature Neuroscience) found reductions of up to ~4.9%, across ~94% of measured brain regions. [Leiden University summary](https://www.universiteitleiden.nl/en/news/2016/12/pregnancy-changes-brain-structure), [PubMed](https://pubmed.ncbi.nlm.nih.gov/27991897/)",
+   "sources": [
+    {
+     "title": "Leiden University summary",
+     "url": "https://www.universiteitleiden.nl/en/news/2016/12/pregnancy-changes-brain-structure"
+    },
+    {
+     "title": "PubMed",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/27991897/"
+    }
+   ]
+  },
+  {
+   "id": "97b761f287",
+   "date": "2026-09-08",
+   "brief": "2026-09-08-dan-martell-gain-matrix-ai-framework",
+   "brief_title": "Dan Martell — The GAIN Matrix for deciding what to hand to AI",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "",
+   "video": "https://www.youtube.com/watch?v=ORgmqtNvYsA",
+   "claim": "The GAIN matrix as a distinct framework",
+   "claim_md": "The GAIN matrix as a distinct framework",
+   "verdict": "Not independently verifiable — it's his own coined methodology, not a factual claim requiring a third-party source. Only found repeated in Martell's own podcast/summary content, nothing independent.",
+   "verdict_md": "Not independently verifiable — it's his own coined methodology, not a factual claim requiring a third-party source. Only found repeated in Martell's own podcast/summary content, nothing independent.",
+   "class": "unverified",
+   "checked_against": "The 505 Podcast summary of this same video",
+   "source_md": "[The 505 Podcast summary of this same video](https://the505podcast.beehiiv.com/podcast/s/the_505_podcast/100m_ceo_explains_how_to_get_ahead_of_99_of_people_with_ai_dan_martell)",
+   "sources": [
+    {
+     "title": "The 505 Podcast summary of this same video",
+     "url": "https://the505podcast.beehiiv.com/podcast/s/the_505_podcast/100m_ceo_explains_how_to_get_ahead_of_99_of_people_with_ai_dan_martell"
+    }
+   ]
+  },
+  {
+   "id": "6d9d093ca0",
+   "date": "2026-09-08",
+   "brief": "2026-09-08-dan-martell-gain-matrix-ai-framework",
+   "brief_title": "Dan Martell — The GAIN Matrix for deciding what to hand to AI",
+   "channel": "",
+   "channel_key": "unknown",
+   "channel_name": "Unknown",
+   "lane": "",
+   "video": "https://www.youtube.com/watch?v=ORgmqtNvYsA",
+   "claim": "A \"GDP valve\" tool shows where AI is affecting jobs by percentage",
+   "claim_md": "A \"GDP valve\" tool shows where AI is affecting jobs by percentage",
+   "verdict": "Unverifiable",
+   "verdict_md": "Unverifiable",
+   "class": "unverified",
+   "checked_against": "No tool or report by that name found under general search; nearest real reports on AI/GDP or job-displacement percentages (Goldman Sachs, McKinsey) use different names and figures than anything stated here — cannot confirm what he's referring to",
+   "source_md": "No tool or report by that name found under general search; nearest real reports on AI/GDP or job-displacement percentages (Goldman Sachs, McKinsey) use different names and figures than anything stated here — cannot confirm what he's referring to",
+   "sources": []
+  },
   {
    "id": "01adb4acec",
    "date": "2026-09-07",
